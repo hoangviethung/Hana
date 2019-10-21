@@ -1,0 +1,13 @@
+mixin product(index, promotion)
+	a.product-item(href="sanpham-ct.html")
+		.imgbox
+			img.lazyload(data-src='./assets/product/p_'+index+'.png')
+		.info
+			h3 Save me 3ce – san hô neon
+			.price-wrapper
+				del.old-price 300.000đ
+				strong.price 300.000đ
+		-if(promotion)
+			.promotion
+				span Sale
+				strong 30%

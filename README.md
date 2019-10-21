@@ -2,18 +2,10 @@
 
 - Chạy "bower install" để cài các thư viện front-end
 
-
-
-- Nếu sử dụng less, chạy "npm run less"
-
-- Nếu sử dụng sass, chạy "npm run sass"
-
-- Nếu sử dụng scss, chạy "npm run scss"
-
-
-
 - Để bắt đầu môi trường dev, chạy "npm start" 
 
+- Để dev từng trang html thì tùy chỉnh trong file config.json
+
 
 
 -------------------------------------------------------
@@ -21,4 +13,4 @@
 
 
 
-- Thêm các thư viện front-end bằng file "_vendor.json"
+- Thêm các thư viện front-end bằng file "vendors.json"

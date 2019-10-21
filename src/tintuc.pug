@@ -1,0 +1,19 @@
+extends _components/_layout/_layout.pug
+
+block var
+	- var title = 'Tin tức'
+	- var bodyClass = 'news-list-page'
+
+block bannerBreadcrumb
+	include _components/_global/_breadcrumb
+block main
+	.news.pt-20
+		.container
+			.row
+				.col-xl-10.col-lg-11
+					include _components/news/banner
+	.news.block-2.pd-40
+		.container
+			.row
+				.col-xl-10.col-lg-11
+					include _components/news/list

@@ -1,0 +1,45 @@
+.news-item {
+	margin-bottom: 40px;
+	display: block;
+
+	.imgbox {
+		transition: all .3s ease-out;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.info {
+		padding: 10px 5px;
+
+		h3 {
+			font-size: 20px;
+			font-family: $pf;
+			color: #1c1c1c;
+			margin-bottom: 8px;
+			transition: all .3s ease-out;
+		}
+
+		time {
+			font-size: 16px;
+			color: #707070;
+			letter-spacing: 4px;
+			font-weight: 300;
+		}
+	}
+
+	@media (min-width: 1025px) {
+		&:hover {
+			.imgbox {
+				box-shadow: 0px 0px 8px rgba(black, .2);
+			}
+
+			.info {
+				h3 {
+					color: map-get($mau, main);
+				}
+			}
+		}
+	}
+}

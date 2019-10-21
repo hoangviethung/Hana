@@ -4,30 +4,28 @@ import {
 } from "gulp";
 
 // Import tasks
-import server from "./_gulptasks/server";
-import jsTask from "./_gulptasks/script";
-import pugTask from "./_gulptasks/html";
-import cssTask from "./_gulptasks/css";
-import jsCore from "./_gulptasks/core-js";
-import cssCore from "./_gulptasks/core-css";
+import server from "./.tasks/server";
+import jsTask from "./.tasks/script";
+import pugTask from "./.tasks/html";
+import cssTask from "./.tasks/css";
+import jsCore from "./.tasks/core-js";
+import cssCore from "./.tasks/core-css";
 import {
 	cleanDist
-} from "./_gulptasks/clean";
+} from "./.tasks/clean";
 import {
 	copyFonts,
-	copyImage,
 	copyFavicon,
-	copyVideo
-} from "./_gulptasks/copy";
+	copyAssets
+} from "./.tasks/copy";
 
 
 exports.default = series(
 	cleanDist,
 	parallel(
 		copyFavicon,
-		copyImage,
 		copyFonts,
-		copyVideo,
+		copyAssets
 	),
 	parallel(
 		jsCore,

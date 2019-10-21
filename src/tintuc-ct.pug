@@ -1,0 +1,14 @@
+extends _components/_layout/_layout.pug
+
+block var
+	- var title = 'Chi tiết tin'
+	- var bodyClass = 'news-detail-page'
+
+block bannerBreadcrumb
+	include _components/_global/_breadcrumb
+block main
+	.news.pt-20
+		.container
+			.row
+				.col-xl-10.col-lg-11
+					include _components/news/detail

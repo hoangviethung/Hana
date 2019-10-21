@@ -1,0 +1,8 @@
+.news-list
+	.row
+		-for(i=1;i<7;i++)
+			.col-md-6
+				+news(i)
+	.row
+		.col-12
+			include ../_global/_pagination

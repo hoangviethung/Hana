@@ -1,0 +1,22 @@
+.checkout-complete {
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 120px 0;
+
+	h1 {
+		margin-top: 60px;
+		font-size: 20px;
+		font-family: $pf;
+		margin-bottom: 8px;
+		text-transform: uppercase;
+	}
+
+	p {
+		font-size: 18px;
+		font-weight: 300;
+		a{
+			color: map-get($mau, main);
+		}
+	}
+}

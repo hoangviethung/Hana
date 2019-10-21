@@ -1,0 +1,118 @@
+.cart.pd-40
+	.container
+		.row
+			.col-xl-8
+				.cart-table-title
+					.info-title
+						p GIỎ HÀNG (6 sản phẩm)
+					.quantity-title
+						p Số lượng
+					.price-title
+						p Giá
+				.cart-table
+					.cart-item
+						.item-info
+							.imgbox
+								img(src="./assets/product/p_4.png", alt="")
+							a.name(href="sanpham-ct.html")
+								h3 Save me 3ce – san hô neon
+							input.item-remove(type='button' value='Xóa')
+						.item-quantity
+							.quantity-input
+								input(type='button' value='-')
+								input(type='text' value='0' placeholder="0")
+								input(type='button' value='+')
+						.item-price
+							p.price
+								b 9.490.000đ
+							p.price-old
+								del 12.390.000đ
+					.cart-item
+						.item-info
+							.imgbox
+								img(src="./assets/product/p_2.png", alt="")
+							a.name(href="sanpham-ct.html")
+								h3 Save me 3ce – san hô neon
+							input.item-remove(type='button' value='Xóa')
+						.item-quantity
+							.quantity-input
+								input(type='button' value='-')
+								input(type='text' value='0' placeholder="0")
+								input(type='button' value='+')
+						.item-price
+							p.price
+								b 9.490.000đ
+							p.price-old
+								del 12.390.000đ
+					.cart-item
+						.item-info
+							.imgbox
+								img(src="./assets/product/p_7.png", alt="")
+							a.name(href="sanpham-ct.html")
+								h3 Save me 3ce – san hô neon
+							input.item-remove(type='button' value='Xóa')
+						.item-quantity
+							.quantity-input
+								input(type='button' value='-')
+								input(type='text' value='0' placeholder="0")
+								input(type='button' value='+')
+						.item-price
+							p.price
+								b 9.490.000đ
+							p.price-old
+								del 12.390.000đ
+			.col-xl-4
+				.cart-summary
+					.cart-summary-block
+						p
+							span Tạm tính:
+							span 515.000.000đ
+						p
+							span Giảm giá:
+							span -15.000.000đ
+					.cart-summary-block
+						p
+							span Thành tiền:
+							strong.price 515.000.000đ
+						p.vat (Đã bao gồm VAT)
+				.cart-checkout
+					.btn.btn-apply(data-fancybox="cart-checkout" data-src="#cart-checkout") Đặt hàng
+
+.d-none
+	#cart-checkout.cart-popup
+		h2 Thông tin liên hệ
+		form
+			.form-group
+				input#fullname(type='text', name='', placeholder='Họ tên')
+			.form-group
+				input#phone(type='text', name='', placeholder='Điện thoại')
+			br
+			h3 Thông tin địa chỉ
+			.form-group
+				select
+					option Chọn Tỉnh/Thành phố
+					option option 1
+					option option 1
+					option option 1
+					option option 1
+			.form-group
+				select
+					option Chọn Quận/Huyện
+					option option 1
+					option option 1
+					option option 1
+					option option 1
+			.form-group
+				select
+					option Chọn Phường/Xã
+					option option 1
+					option option 1
+					option option 1
+					option option 1
+			.form-group
+				textarea#address(name='', placeholder='151, Quang Trung, Gò Vấp')
+			.form-check
+				input#default-address(type='checkbox')
+				label(for='default-address') Địa chỉ mặc định
+			.form-button
+				button.btn.btn-apply Xác nhận đơn hàng

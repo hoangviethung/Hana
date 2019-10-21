@@ -1,0 +1,67 @@
+.hamburger-1 {
+	width: 30px;
+	height: 30px;
+	justify-content: flex-end;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 3px;
+	display: flex;
+
+	span {
+		display: block;
+		flex: 0 0 24px;
+		max-width: 24px;
+		height: 2px;
+		background: map-get($mau, den);
+		border-radius: 5px;
+		transform-origin: 50% 50%;
+		transition: all .3s ease-in-out;
+	}
+
+	&.active {
+		span {
+			&:last-child {
+				transform: translateY(-8px) rotate(45deg);
+				transition-delay: .15s;
+			}
+
+			&:first-child {
+				transform: translateY(8px) rotate(-45deg);
+				transition-delay: .15s;
+			}
+
+			&:nth-child(2) {
+				transform: translateX(100%);
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0;
+	background: white;
+	cursor: pointer;
+}
+
+.btn-apply {
+	text-transform: uppercase;
+	color: white;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: $pf;
+	background: #000000;
+	border: 1px solid transparent;
+	position: relative;
+
+	@media (max-width: 1199.98px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 767.98px) {
+		font-size: 14px;
+	}
+}

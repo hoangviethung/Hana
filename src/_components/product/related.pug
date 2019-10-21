@@ -1,0 +1,19 @@
+hr
+.product.pt-40
+	.container
+		.detail
+			h2.product-block-title Sản phẩm liên quan
+			.product-related
+				.swiper-prev
+					<svg xmlns="http://www.w3.org/2000/svg" width="10.091" height="21.459" viewBox="0 0 10.091 21.459"><path d="M0,0,9.126,7.407,18.649,0" transform="translate(8.684 1.407) rotate(90)" fill="none" stroke="#a5a5a5" stroke-linecap="round" stroke-width="2"/></svg>
+				.swiper-next
+					<svg xmlns="http://www.w3.org/2000/svg" width="10.091" height="21.459" viewBox="0 0 10.091 21.459"><path d="M0,0,9.126,7.407,18.649,0" transform="translate(1.407 20.052) rotate(-90)" fill="none" stroke="#a5a5a5" stroke-linecap="round" stroke-width="2"/></svg>
+				.swiper-container
+					.swiper-wrapper
+						-for(i=1;i<6;i++)
+							-if(i%2==0)
+								.swiper-slide
+									+product(i, true)
+							-else
+								.swiper-slide
+									+product(i, false)

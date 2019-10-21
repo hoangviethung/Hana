@@ -1,0 +1,405 @@
+.cart {
+	.cart-table-title {
+		display: flex;
+		color: #787878;
+		font-size: 18px;
+		border-bottom: 1px solid #F5F5F5;
+
+		.info-title {
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+		}
+
+		.quantity-title {
+			flex: 0 0 150px;
+			max-width: 150px;
+			text-align: center;
+
+			@media (max-width: 1025px) {
+				flex: 0 0 25%;
+				max-width: 25%;
+			}
+		}
+
+		.price-title {
+			flex: 0 0 150px;
+			max-width: 150px;
+			text-align: right;
+		}
+
+		@media (max-width: 767.98px) {
+			display: none;
+		}
+	}
+
+	.cart-item {
+		display: flex;
+		padding: 30px 0;
+		border-bottom: 1px solid #F5F5F5;
+		align-items: center;
+
+		.item-info {
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+			display: flex;
+			position: relative;
+
+			.imgbox {
+				flex: 0 0 90px;
+				max-width: 90px;
+				border: 1px solid darken(white, 8%);
+			}
+
+			.name {
+				padding-left: 15px;
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+
+				h3 {
+					font-size: 20px;
+					font-family: $pf;
+					text-transform: uppercase;
+					color: #1c1c1c;
+
+					@media (max-width: 1199.98px) {
+						font-size: 18px;
+					}
+
+					@media (max-width: 767.98px) {
+						font-size: 16px;
+					}
+				}
+			}
+
+			.item-remove {
+				@media (min-width: 768px) {
+					position: absolute;
+					width: 40px;
+					border: 0;
+					background: none;
+					bottom: 0px;
+					line-height: 1;
+					left: 100px;
+					font-size: 18px;
+					color: #787878;
+				}
+			}
+		}
+
+		.item-quantity {
+			flex: 0 0 150px;
+			max-width: 150px;
+
+			.quantity-input {
+				display: flex;
+				justify-content: center;
+			}
+
+			input[type='button'],
+			input[type='text'] {
+				border: 0;
+				background: none;
+				flex: 0 0 30px;
+				height: 30px;
+				text-align: center;
+				max-width: 30px;
+				color: #888888
+			}
+		}
+
+		.item-price {
+			flex: 0 0 150px;
+			max-width: 150px;
+			font-size: 18px;
+			text-align: right;
+
+			.price {
+				font-weight: 500;
+			}
+
+			.price-old {
+				font-weight: 300;
+				color: #787878;
+			}
+		}
+
+		@media (max-width: 1199.98px) {
+			.item-price {
+				font-size: 16px;
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			.item-quantity {
+				flex: 0 0 25%;
+				max-width: 25%;
+			}
+		}
+
+		@media (max-width: 767.98px) {
+			flex-wrap: wrap;
+			padding: 10px;
+			box-shadow: 0 0 4px rgba(black, .15);
+			border-radius: 5px;
+			margin-bottom: 20px;
+
+			.item-info {
+				flex: 0 0 100%;
+				max-width: 100%;
+
+				.name {
+					padding-right: 15px;
+				}
+
+				.item-remove {
+					border: 0;
+					height: 35px;
+					flex: 0 0 35px;
+					align-self: center;
+					width: 35px;
+					font-size: 12px;
+					background: transparent;
+					border-radius: 50px;
+				}
+
+				.imgbox {
+					flex: 0 0 70px;
+					max-width: 70px;
+				}
+			}
+
+			.item-price {
+				font-size: 14px;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+
+			.item-quantity {
+				flex: 0 0 100%;
+				max-width: 100%;
+				margin-bottom: 10px;
+
+				.quantity-input {
+					width: 90px;
+					margin-left: auto;
+					border: 1px solid darken(white, 12%);
+				}
+			}
+		}
+	}
+
+	.cart-summary {
+		background: #F5F5F6;
+		font-size: 18px;
+
+		.cart-summary-block {
+			padding: 35px;
+
+			+.cart-summary-block {
+				border-top: 1px solid darken(white, 15%);
+			}
+
+			p {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-weight: 300;
+				margin-bottom: 8px;
+
+				.price {
+					font-size: 32px;
+					color: #E99EA3;
+					line-height: 1.2;
+				}
+
+				&.vat {
+					justify-content: flex-end;
+				}
+			}
+		}
+
+		@media (max-width: 1439.98px) {
+			.cart-summary-block {
+				padding: 20px;
+				p {
+					.price {
+						font-size: 28px;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1199.98px) {
+			font-size: 16px;
+
+			.cart-summary-block {
+				p {
+					.price {
+						font-size: 24px;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 767.98px) {
+			font-size: 14px;
+			font-size: 16px;
+
+			.cart-summary-block {
+				p {
+					.price {
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	.cart-checkout {
+		margin-top: 10px;
+
+		.btn-apply {
+			height: 45px;
+			border-radius: 5px;
+		}
+	}
+}
+
+.cart-popup {
+	overflow: visible;
+	border-radius: 5px;
+
+	.fancybox-close-small {
+		width: 40px;
+		height: 40px;
+		top: -20px;
+		right: -20px;
+		background: black;
+		opacity: 1;
+		padding: 5px;
+
+		svg {
+			path {
+				fill: white;
+			}
+		}
+
+		@media (max-width: 767.98px) {
+			top: 0;
+			right: 0;
+		}
+	}
+
+	h2 {
+		font-size: 20px;
+		font-family: $pf;
+		text-align: center;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+
+		@media (max-width: 767.98px) {
+			font-size: 18px;
+			margin-bottom: 15px;
+		}
+	}
+
+	form {
+		width: 430px;
+		max-width: 100%;
+
+		h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
+			font-weight: 400;
+
+			@media (max-width: 767.98px) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.form-group {
+		margin-bottom: 10px;
+
+		input[type='text'],
+		select,
+		textarea {
+			border: 1px solid darken(white, 8%);
+			border-radius: 5px;
+			font-size: 16px;
+			padding: 8px 15px;
+			font-weight: 300;
+			color: lighten(black, 12%);
+
+			&::placeholder {
+				color: lighten(black, 12%);
+			}
+
+			@media (max-width: 767.98px) {
+				font-size: 14px;
+			}
+		}
+
+		input[type='text'],
+		select {
+			height: 40px;
+		}
+
+		textarea {
+			height: 80px;
+		}
+	}
+
+	.form-check {
+		label {
+			padding-left: 25px;
+			position: relative;
+			font-size: 12px;
+			cursor: pointer;
+
+			&:before {
+				content: '';
+				position: absolute;
+				width: 14px;
+				height: 14px;
+				top: 2px;
+				left: 0;
+				border: 1px solid darken(white, 8%);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		input[type='checkbox'] {
+			display: none;
+
+			&:checked~label:before {
+				content: '\f12c';
+				font-family: 'Material Design Icons';
+				font-size: 12px;
+				border: 1px solid map-get($mau, main);
+				background: map-get($mau, main);
+				color: white;
+			}
+		}
+	}
+
+	.form-button {
+		margin-top: 20px;
+
+		.btn-apply {
+			width: 100%;
+			height: 45px;
+			border-radius: 5px;
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}

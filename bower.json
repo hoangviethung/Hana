@@ -17,12 +17,14 @@
   "dependencies": {
     "jquery": "3.4.1",
     "fancybox": "3.5.7",
-    "plyr": "3.5.4",
     "swiper": "4.5.0",
-    "mdi": "3.6.95",
-    "font-awesome": "5.9.0",
-    "linearicons": "1.0.1",
     "lazysizes": "5.1.0",
-    "object-fit-images": "*"
+    "object-fit-images": "*",
+    "pickr": "@simonwep/pickr#^0.3.4",
+    "masonry-layout": "^4.2.2",
+    "linearicons": "^1.0.1",
+    "imagesloaded": "^4.1.4",
+    "mdi": "^4.5.95",
+    "jquery-ui": "^1.12.1"
   }
 }

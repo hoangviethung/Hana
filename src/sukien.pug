@@ -1,0 +1,19 @@
+extends _components/_layout/_layout.pug
+
+block var
+	- var title = 'Sự kiện'
+	- var bodyClass = 'event-list-page'
+
+block bannerBreadcrumb
+	include _components/_global/_breadcrumb
+block main
+	.news.pt-20
+		.container
+			.row
+				.col-xl-10.col-lg-11
+					include _components/event/banner
+	.news.block-2.pd-40
+		.container
+			.row
+				.col-xl-10.col-lg-11
+					include _components/event/list

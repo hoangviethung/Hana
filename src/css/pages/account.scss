@@ -1,0 +1,94 @@
+.account-sidemenu {
+	width: 360px;
+	padding-right: 100px;
+
+	.account-info {
+		display: flex;
+		align-items: center;
+
+		.img {
+			flex: 0 0 60px;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: darken(white, 15%);
+		}
+
+		.info {
+			padding-left: 10px;
+
+			h3 {
+				font-weight: 300;
+				font-size: 16px;
+			}
+		}
+	}
+
+	.account-nav {
+		padding-left: 0;
+		list-style-type: none;
+		padding-top: 10px;
+		border-top: 1px dashed #DFDFDF;
+		margin-top: 15px;
+
+		li {
+			+li {
+				margin-top: 5px;
+			}
+
+			a {
+				padding: 0 20px;
+				border-radius: 5px;
+				display: flex;
+				align-items: center;
+				height: 40px;
+			}
+
+			svg {
+				width: 24px;
+				height: 18px;
+			}
+
+			span {
+				font-size: 16px;
+				font-weight: 300;
+				color: #1c1c1c;
+				padding-left: 10px;
+			}
+
+			&.active {
+				a {
+					background: map-get($mau, main);
+				}
+
+				svg {
+					path {
+						fill: white;
+					}
+				}
+
+				span {
+					color: white;
+				}
+			}
+
+			@media (min-width: 1025px) {
+				&:hover {
+					a {
+						background: map-get($mau, main);
+					}
+
+					svg {
+						path {
+							fill: white;
+						}
+					}
+
+					span {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
