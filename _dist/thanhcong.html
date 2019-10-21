@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Đặt hàng thành công</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<style>#loading{-webkit-transition:.8s;-o-transition:.8s;position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999;transition:.8s;background:#fff;width:100%;height:100%}#loading #progress{-webkit-transition:.8s;-o-transition:.8s;display:none;transition:.8s;background:#000;width:0;height:1px}#loading #progress,#loading .progstat-wrapper{-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);position:absolute;top:50%;transform:translateY(-50%)}#loading .progstat-wrapper{margin-top:0;width:100%;color:#000;font-size:14px;font-weight:300;letter-spacing:3px;text-align:center}#loading .logo-loader{-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:-100px;width:150px;height:150px}</style>
+		<script>!function(){function n(n){return document.getElementById(n)}document.addEventListener("DOMContentLoaded",function(){var e=n("loading"),t=n("progress"),o=n("progstat"),r=document.images,i=0,d=r.length;if(0==d)return u();function a(){var n=100/d*(i+=1)<<0;if(t.style.width=n,o.innerHTML=n,i===d)return u()}function u(){e.style.opacity=0,setTimeout(function(){e.style.display="none";var n=document.getElementById("loading");n.parentNode.removeChild(n)},1500)}for(var c=0;c<d;c++){var s=new Image;s.onload=a,s.onerror=a,s.src=r[c].src}},!1)}();</script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&amp;display=swap&amp;subset=vietnamese">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;display=swap&amp;subset=vietnamese">
+		<link rel="stylesheet" href="./css/core.min.css">
+		<link rel="stylesheet" href="./css/main.min.css">
+	</head>
+	<body>
+		<div id="loading">
+			<div class="logo-loader"><img src="./assets/loading.gif" alt=""></div>
+			<div class="progstat-wrapper">Loading: <span id="progstat">0</span>%</div>
+			<div id="progress"></div>
+		</div>
+		<div id="fb-root"></div>
+		<header>
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="logo"><a href="/"><img src="./assets/logo.png" alt=""></a></div>
+					<nav class="header-navs">
+						<div class="nav-item first-item"><a class="nav-link" href="sanpham.html">Best-Sale</a></div>
+						<div class="nav-item"><a class="nav-link" href="sanpham.html">Monsfit</a></div>
+						<div class="nav-item"><a class="nav-link" href="sale.html">Sale</a>
+							<div class="mobile nav-item-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="21.459" viewBox="0 0 10.091 21.459"><path d="M0,0,9.126,7.407,18.649,0" transform="translate(1.407 20.052) rotate(-90)" fill="none" stroke="#000000" stroke-linecap="round" stroke-width="2"/></svg></div>
+							<div class="nav-sub">
+								<div class="mobile nav-sub-close"><svg xmlns="http://www.w3.org/2000/svg" width="5.395" height="10.477" viewBox="0 0 5.395 10.477"><path d="M4.091,0,0,4.532,4.189,9.064" transform="translate(0.5 0.706)" fill="none" stroke="#1c1c1c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg><span>Quay lại</span></div><a class="nav-sub-link" href="sanpham.html">Hair Care</a><a class="nav-sub-link" href="sanpham.html">Dưỡng Face</a><a class="nav-sub-link" href="sanpham.html">Make Up</a><a class="nav-sub-link" href="sanpham.html">Face</a><a class="nav-sub-link" href="sanpham.html">Lipstick</a><a class="nav-sub-link" href="sanpham.html">Dưỡng Body</a><a class="nav-sub-link" href="sanpham.html">Sản phẩm khác</a>
+							</div>
+						</div>
+						<div class="nav-item"><a class="nav-link" href="#">Collection</a></div>
+						<div class="nav-item"><a class="nav-link" href="#">Cosmetics</a></div>
+					</nav>
+					<nav class="header-items">
+						<div class="item mobile menu-toggle hamburger-1"><span></span><span></span><span></span></div>
+						<div class="item login">
+							<div class="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="29.114" height="26.998" viewBox="0 0 29.114 26.998">
+									<path d="M35.171,28.332a4.5,4.5,0,0,0-3.4-1.54H30.111a.845.845,0,1,0,0,1.689h1.657a2.833,2.833,0,0,1,2.116.945,1.757,1.757,0,0,1,.433,1.433l-.332,1.775c-.539,2.435-1.715,2.716-2.554,2.716H20.792c-1.172,0-2.032-.918-2.555-2.729L17.9,30.832a1.555,1.555,0,0,1,.348-1.324,2.958,2.958,0,0,1,2.205-1.026h1.611a.845.845,0,1,0,0-1.689H20.454a4.6,4.6,0,0,0-3.524,1.658,3.2,3.2,0,0,0-.685,2.72l.338,1.8a.773.773,0,0,0,.018.076c.734,2.574,2.222,3.991,4.191,3.991H31.43c1.509,0,3.464-.7,4.208-4.067l.342-1.822A3.446,3.446,0,0,0,35.171,28.332ZM19.748,20.759a26.751,26.751,0,0,0,1.835,3.949c.049.073.1.158.155.251A4.631,4.631,0,0,0,26.1,27.5a4.63,4.63,0,0,0,4.363-2.537c.056-.093.106-.178.155-.251a26.752,26.752,0,0,0,1.835-3.949,1.611,1.611,0,0,0,.978-1.479V17.754a1.608,1.608,0,0,0-.763-1.368v-.54c0-3.634-2.455-5.8-6.567-5.8s-6.567,2.17-6.567,5.8v.548a1.624,1.624,0,0,0-.763,1.359V19.28A1.61,1.61,0,0,0,19.748,20.759Zm.711-2.928a.844.844,0,0,0,.763-.841V15.847c0-1.877.846-4.115,4.878-4.115,3.191,0,4.878,1.423,4.878,4.115v1.145a.844.844,0,0,0,.763.841V19.2a.846.846,0,0,0-.709.544,28.475,28.475,0,0,1-1.82,4.025c-.062.092-.127.2-.2.318A2.944,2.944,0,0,1,26.1,25.808a2.944,2.944,0,0,1-2.915-1.719c-.071-.118-.135-.225-.2-.317a28.556,28.556,0,0,1-1.82-4.025.845.845,0,0,0-.709-.544V17.832Zm-2.4,5.7a.844.844,0,0,0-.845-.845H13.33V18.805a.845.845,0,0,0-1.689,0V22.69H7.756a.845.845,0,1,0,0,1.689h3.885v3.885a.845.845,0,0,0,1.689,0V24.379h3.885A.844.844,0,0,0,18.06,23.535Z" transform="translate(-6.911 -10.042)"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="item search">
+							<div class="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32.131" height="32.489" viewBox="0 0 32.131 32.489">
+									<g id="Group_8325" data-name="Group 8325" transform="translate(1 1)">
+										<circle id="Ellipse_203" data-name="Ellipse 203" cx="10.999" cy="10.999" r="10.999" fill="none" stroke="#201e1e" stroke-miterlimit="10" stroke-width="2"></circle>
+										<line id="Line_361" data-name="Line 361" x2="11.758" y2="11.897" transform="translate(18.662 18.888)" fill="none" stroke="#221c21" stroke-miterlimit="10" stroke-width="2"></line>
+									</g>
+								</svg>
+							</div>
+							<form class="search-form">
+								<input type="text" placeholder="Nhập từ khóa...">
+								<button>
+									 <svg xmlns="http://www.w3.org/2000/svg" width="26.987" height="27.282" viewBox="0 0 26.987 27.282"><g transform="translate(1 1)"><ellipse cx="9.139" cy="9.139" rx="9.139" ry="9.139" fill="none" stroke="#201e1e" stroke-miterlimit="10" stroke-width="2"/><line x2="9.77" y2="9.885" transform="translate(15.506 15.694)" fill="none" stroke="#221c21" stroke-miterlimit="10" stroke-width="2"/></g></svg></button>
+							</form>
+						</div>
+						<div class="item cart">
+							<div class="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="34.439" height="32.298" viewBox="0 0 34.439 32.298">
+									<g id="Group_8326" data-name="Group 8326" transform="translate(0 1)">
+										<path id="Path_4895" data-name="Path 4895" d="M244.835,996.71h5.05l5.8,20.09h15.686l6.339-13.644-26-.14" transform="translate(-244.835 -996.71)" fill="none" stroke="#201e1e" stroke-miterlimit="10" stroke-width="2"></path>
+										<circle id="Ellipse_204" data-name="Ellipse 204" cx="2.471" cy="2.471" r="2.471" transform="translate(7.091 25.356)" fill="none" stroke="#201e1e" stroke-miterlimit="10" stroke-width="2"></circle>
+										<circle id="Ellipse_205" data-name="Ellipse 205" cx="2.471" cy="2.471" r="2.471" transform="translate(25.76 25.356)" fill="none" stroke="#201e1e" stroke-miterlimit="10" stroke-width="2"></circle>
+									</g>
+								</svg>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="d-none checkout-successful-page" id="js-page-verify"></div>
+			<div class="breadcrumb-wrapper">
+				<div class="container">
+					<ul class="breadcrumb">
+						<li><a href="#">Trang chủ</a></li>
+						<li><a href="#">Text</a></li>
+						<li class="active"><a href="#">Name Page</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="cart">
+				<div class="container">
+					<div class="checkout-complete"><svg xmlns="http://www.w3.org/2000/svg" width="314.784" height="145.171" viewBox="0 0 314.784 145.171"><g transform="translate(-691.898 -314.225)"><g transform="translate(798.168 360.166)"><path d="M623.628,446.738h-104.9a1.927,1.927,0,0,1-1.846-1.376l-16.9-56.652a1.927,1.927,0,0,1,1.846-2.477H640.568a1.926,1.926,0,0,1,1.846,2.478l-16.939,56.652A1.928,1.928,0,0,1,623.628,446.738Zm-103.464-3.854H622.193l15.788-52.8H504.418Z" transform="translate(-499.906 -386.233)" fill="#1c1c1c"/></g><g transform="translate(810.241 416.818)"><path d="M648.5,536.928H534.678a1.927,1.927,0,0,1-1.053-.313c-3.66-2.389-5.575-5.227-5.692-8.438-.2-5.586,5.341-9.872,5.577-10.052a1.927,1.927,0,0,1,2.338,3.063h0c-1.169.9-4.179,3.885-4.064,6.86.068,1.764,1.239,3.453,3.483,5.026H648.5a1.927,1.927,0,0,1,0,3.854Z" transform="translate(-527.928 -517.731)" fill="#1c1c1c"/></g><g transform="translate(767.816 332.301)"><path d="M461.731,353.272a1.928,1.928,0,0,1-1.851-1.4l-6.438-22.453-20.135-3.638v5.292l19.127,2.441a1.927,1.927,0,0,1-.488,3.823l-20.809-2.656a1.927,1.927,0,0,1-1.683-1.912v-9.294a1.927,1.927,0,0,1,2.269-1.9l23.584,4.26a1.927,1.927,0,0,1,1.51,1.365l6.769,23.605a1.929,1.929,0,0,1-1.853,2.459Z" transform="translate(-429.453 -321.553)" fill="#1c1c1c"/></g><g transform="translate(899.979 441.913)"><path d="M745.273,593.464a8.747,8.747,0,1,1,9.048-8.742A8.909,8.909,0,0,1,745.273,593.464Zm0-13.63a4.9,4.9,0,1,0,5.194,4.888A5.054,5.054,0,0,0,745.273,579.833Z" transform="translate(-736.225 -575.98)" fill="#1c1c1c"/></g><g transform="translate(822.414 441.663)"><path d="M565.231,592.885a8.747,8.747,0,1,1,9.048-8.741A8.908,8.908,0,0,1,565.231,592.885Zm0-13.63a4.9,4.9,0,1,0,5.194,4.888A5.054,5.054,0,0,0,565.231,579.255Z" transform="translate(-556.184 -575.401)" fill="#1c1c1c"/></g><g transform="translate(802.683 375.306)"><path d="M641.281,425.228H512.314a1.927,1.927,0,1,1,0-3.853H641.281a1.927,1.927,0,1,1,0,3.853Z" transform="translate(-510.387 -421.375)" fill="#1c1c1c"/></g><g transform="translate(808.472 394.714)"><path d="M643.85,470.277h-118.1a1.927,1.927,0,0,1,0-3.853h118.1a1.927,1.927,0,1,1,0,3.853Z" transform="translate(-523.822 -466.424)" fill="#1c1c1c"/></g><g transform="translate(833.018 360.166)"><path d="M582.725,446.738a1.927,1.927,0,0,1-1.927-1.927V388.16a1.927,1.927,0,0,1,3.854,0v56.652A1.927,1.927,0,0,1,582.725,446.738Z" transform="translate(-580.798 -386.233)" fill="#1c1c1c"/></g><g transform="translate(870.171 360.166)"><path d="M668.963,446.738a1.927,1.927,0,0,1-1.927-1.927V388.16a1.927,1.927,0,1,1,3.853,0v56.652A1.927,1.927,0,0,1,668.963,446.738Z" transform="translate(-667.036 -386.233)" fill="#1c1c1c"/></g><g transform="translate(907.1 360.166)"><path d="M754.681,446.738a1.927,1.927,0,0,1-1.927-1.927V388.16a1.927,1.927,0,1,1,3.853,0v56.652A1.927,1.927,0,0,1,754.681,446.738Z" transform="translate(-752.754 -386.233)" fill="#1c1c1c"/></g><g transform="translate(795.897 356.984)"><path d="M618.441,439.519H513.54a2.011,2.011,0,0,1-1.927-1.436l-16.9-56.652a2.01,2.01,0,0,1,1.927-2.585H635.38a2.01,2.01,0,0,1,1.926,2.587l-16.939,56.652A2.011,2.011,0,0,1,618.441,439.519Zm-103.4-4.021H616.944l15.737-52.631H499.343Z" transform="translate(-494.635 -378.846)" fill="#1c1c1c"/></g><g transform="translate(807.97 413.636)"><path d="M643.314,529.708H529.49a2.007,2.007,0,0,1-1.1-.327c-3.684-2.4-5.611-5.265-5.729-8.5-.2-5.629,5.372-9.941,5.61-10.122a2.01,2.01,0,0,1,2.44,3.2h0c-1.16.893-4.145,3.853-4.031,6.791.067,1.731,1.219,3.392,3.425,4.945H643.314a2.01,2.01,0,1,1,0,4.021Z" transform="translate(-522.657 -510.344)" fill="#1c1c1c"/></g><g transform="translate(765.544 329.118)"><path d="M456.543,346.053a2.012,2.012,0,0,1-1.932-1.457l-6.424-22.4L428.2,318.582V323.7l19.053,2.431a2.01,2.01,0,0,1-.509,3.988l-20.81-2.656a2.011,2.011,0,0,1-1.756-1.995v-9.293a2.011,2.011,0,0,1,2.368-1.978l23.583,4.26a2.011,2.011,0,0,1,1.575,1.424l6.769,23.6a2.012,2.012,0,0,1-1.934,2.566Z" transform="translate(-424.181 -314.166)" fill="#1c1c1c"/></g><g transform="translate(897.707 438.73)"><path d="M740.085,586.244a8.831,8.831,0,1,1,9.131-8.826A8.993,8.993,0,0,1,740.085,586.244Zm0-13.63a4.814,4.814,0,1,0,5.11,4.8A4.971,4.971,0,0,0,740.085,572.614Z" transform="translate(-730.953 -568.593)" fill="#1c1c1c"/></g><g transform="translate(820.142 438.481)"><path d="M560.043,585.665a8.831,8.831,0,1,1,9.132-8.825A8.993,8.993,0,0,1,560.043,585.665Zm0-13.63a4.814,4.814,0,1,0,5.111,4.8A4.97,4.97,0,0,0,560.043,572.035Z" transform="translate(-550.912 -568.014)" fill="#1c1c1c"/></g><g transform="translate(800.412 372.124)"><path d="M636.093,418.009H507.126a2.01,2.01,0,1,1,0-4.021H636.093a2.01,2.01,0,0,1,0,4.021Z" transform="translate(-505.115 -413.988)" fill="#1c1c1c"/></g><g transform="translate(806.2 391.532)"><path d="M638.663,463.058h-118.1a2.01,2.01,0,1,1,0-4.021h118.1a2.01,2.01,0,0,1,0,4.021Z" transform="translate(-518.55 -459.037)" fill="#1c1c1c"/></g><g transform="translate(830.747 356.984)"><path d="M577.537,439.519a2.01,2.01,0,0,1-2.01-2.011V380.857a2.01,2.01,0,1,1,4.021,0v56.652A2.011,2.011,0,0,1,577.537,439.519Z" transform="translate(-575.527 -378.846)" fill="#1c1c1c"/></g><g transform="translate(867.899 356.984)"><path d="M663.775,439.519a2.011,2.011,0,0,1-2.011-2.011V380.857a2.011,2.011,0,0,1,4.021,0v56.652A2.011,2.011,0,0,1,663.775,439.519Z" transform="translate(-661.764 -378.846)" fill="#1c1c1c"/></g><g transform="translate(904.828 356.984)"><path d="M749.493,439.519a2.011,2.011,0,0,1-2.01-2.011V380.857a2.011,2.011,0,0,1,4.021,0v56.652A2.011,2.011,0,0,1,749.493,439.519Z" transform="translate(-747.482 -378.846)" fill="#1c1c1c"/></g><path d="M828.5,302.617a2.112,2.112,0,0,1-2.112-2.112V283.6a2.112,2.112,0,0,1,4.224,0v16.9A2.112,2.112,0,0,1,828.5,302.617Z" transform="translate(107.899 41.663)" fill="#1c1c1c"/><path d="M821.278,309.835h-16.9a2.112,2.112,0,1,1,0-4.224h16.9a2.112,2.112,0,1,1,0,4.224Z" transform="translate(123.567 25.994)" fill="#1c1c1c"/><g transform="translate(717.419 430.939)"><path d="M366.37,553.525H313.982a1.508,1.508,0,1,1,0-3.016H366.37a1.508,1.508,0,1,1,0,3.016Z" transform="translate(-312.474 -550.509)" fill="#1c1c1c"/></g><g transform="translate(706.305 395.862)"><path d="M340.573,472.1H288.185a1.508,1.508,0,1,1,0-3.016h52.388a1.508,1.508,0,1,1,0,3.016Z" transform="translate(-286.677 -469.088)" fill="#1c1c1c"/></g><g transform="translate(693.356 413.04)"><path d="M310.515,511.977H258.127a1.508,1.508,0,0,1,0-3.016h52.388a1.508,1.508,0,0,1,0,3.016Z" transform="translate(-256.619 -508.961)" fill="#1c1c1c"/></g><g transform="translate(762.811 413.04)"><path d="M434.11,511.977H419.344a1.508,1.508,0,0,1,0-3.016H434.11a1.508,1.508,0,1,1,0,3.016Z" transform="translate(-417.836 -508.961)" fill="#1c1c1c"/></g><g transform="translate(715.961 429.481)"><path d="M362.985,550.14H310.6a1.508,1.508,0,0,1,0-3.016h52.388a1.508,1.508,0,0,1,0,3.016Z" transform="translate(-309.089 -547.124)" fill="#1c1c1c"/></g><g transform="translate(704.847 394.403)"><path d="M337.188,468.719H284.8a1.508,1.508,0,1,1,0-3.016h52.388a1.508,1.508,0,0,1,0,3.016Z" transform="translate(-283.292 -465.703)" fill="#1c1c1c"/></g><g transform="translate(691.898 411.582)"><path d="M307.131,508.592H254.743a1.508,1.508,0,0,1,0-3.016h52.388a1.508,1.508,0,0,1,0,3.016Z" transform="translate(-253.235 -505.576)" fill="#1c1c1c"/></g><g transform="translate(761.352 411.582)"><path d="M430.725,508.592H415.959a1.508,1.508,0,1,1,0-3.016h14.766a1.508,1.508,0,1,1,0,3.016Z" transform="translate(-414.451 -505.576)" fill="#1c1c1c"/></g><g transform="translate(968.838 314.915)"><g transform="translate(17.414 0)"><path d="M986.732,337.218a1.508,1.508,0,0,1-1.508-1.508v-8.9a1.508,1.508,0,1,1,3.016,0v8.9A1.508,1.508,0,0,1,986.732,337.218Z" transform="translate(-985.224 -325.299)" fill="#1c1c1c"/></g><g transform="translate(17.414 25.924)"><path d="M986.732,397.392a1.508,1.508,0,0,1-1.508-1.508v-8.9a1.508,1.508,0,0,1,3.016,0v8.9A1.508,1.508,0,0,1,986.732,397.392Z" transform="translate(-985.224 -385.473)" fill="#1c1c1c"/></g><g transform="translate(23.432 5.1)"><path d="M1000.7,346.45a1.508,1.508,0,0,1-1.067-2.574l6.3-6.3a1.508,1.508,0,0,1,2.132,2.133l-6.3,6.3A1.5,1.5,0,0,1,1000.7,346.45Z" transform="translate(-999.192 -337.138)" fill="#1c1c1c"/></g><g transform="translate(5.101 23.431)"><path d="M958.15,389a1.508,1.508,0,0,1-1.066-2.574l6.3-6.3a1.508,1.508,0,1,1,2.132,2.133l-6.3,6.3A1.5,1.5,0,0,1,958.15,389Z" transform="translate(-956.643 -379.687)" fill="#1c1c1c"/></g><g transform="translate(25.924 17.414)"><path d="M1015.389,368.736h-8.9a1.508,1.508,0,1,1,0-3.016h8.9a1.508,1.508,0,0,1,0,3.016Z" transform="translate(-1004.977 -365.72)" fill="#1c1c1c"/></g><g transform="translate(0 17.414)"><path d="M955.215,368.736h-8.9a1.508,1.508,0,1,1,0-3.016h8.9a1.508,1.508,0,0,1,0,3.016Z" transform="translate(-944.803 -365.72)" fill="#1c1c1c"/></g><g transform="translate(23.432 23.431)"><path d="M1007,389a1.5,1.5,0,0,1-1.066-.442l-6.3-6.3a1.508,1.508,0,1,1,2.132-2.133l6.3,6.3A1.508,1.508,0,0,1,1007,389Z" transform="translate(-999.192 -379.687)" fill="#1c1c1c"/></g><g transform="translate(5.101 5.1)"><path d="M964.446,346.45a1.5,1.5,0,0,1-1.066-.442l-6.3-6.3a1.508,1.508,0,0,1,2.133-2.133l6.3,6.3a1.508,1.508,0,0,1-1.066,2.574Z" transform="translate(-956.643 -337.138)" fill="#1c1c1c"/></g></g><g transform="translate(986.109 314.225)"><path d="M985.814,334.445a.922.922,0,0,1-.922-.921v-8.9a.921.921,0,1,1,1.843,0v8.9A.922.922,0,0,1,985.814,334.445Z" transform="translate(-984.892 -323.698)" fill="#1c1c1c"/></g><g transform="translate(986.109 340.149)"><path d="M985.814,394.619a.922.922,0,0,1-.922-.921v-8.9a.921.921,0,1,1,1.843,0v8.9A.922.922,0,0,1,985.814,394.619Z" transform="translate(-984.892 -383.872)" fill="#1c1c1c"/></g><g transform="translate(992.127 319.326)"><path d="M999.782,343.676a.921.921,0,0,1-.651-1.573l6.3-6.3a.921.921,0,1,1,1.3,1.3l-6.3,6.3A.917.917,0,0,1,999.782,343.676Z" transform="translate(-998.86 -335.537)" fill="#1c1c1c"/></g><g transform="translate(973.796 337.657)"><path d="M957.232,386.225a.922.922,0,0,1-.652-1.573l6.3-6.3a.921.921,0,1,1,1.3,1.3l-6.3,6.3A.918.918,0,0,1,957.232,386.225Z" transform="translate(-956.311 -378.086)" fill="#1c1c1c"/></g><g transform="translate(994.62 331.639)"><path d="M1014.471,365.962h-8.9a.921.921,0,1,1,0-1.843h8.9a.921.921,0,0,1,0,1.843Z" transform="translate(-1004.646 -364.119)" fill="#1c1c1c"/></g><g transform="translate(968.695 331.639)"><path d="M954.3,365.962h-8.9a.921.921,0,1,1,0-1.843h8.9a.921.921,0,1,1,0,1.843Z" transform="translate(-944.472 -364.119)" fill="#1c1c1c"/></g><g transform="translate(992.127 337.657)"><path d="M1006.078,386.225a.917.917,0,0,1-.651-.27l-6.3-6.3a.921.921,0,0,1,1.3-1.3l6.3,6.3a.921.921,0,0,1-.651,1.573Z" transform="translate(-998.86 -378.087)" fill="#1c1c1c"/></g><g transform="translate(973.796 319.326)"><path d="M963.528,343.676a.92.92,0,0,1-.651-.27l-6.3-6.3a.922.922,0,1,1,1.3-1.3l6.3,6.3a.921.921,0,0,1-.652,1.573Z" transform="translate(-956.311 -335.537)" fill="#1c1c1c"/></g></g></svg>
+						<h1>Đặt hàng thành công</h1>
+						<p>Cảm ơn bạn đã mua hàng tại Hana</p>
+						<p>Quản trị viên sẽ liên hệ để lại để xác nhận.</p><br><br>
+						<p>Bạn có thể xem lại đơn hàng tại <a href="quanlydonhang">đây</a></p>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="top-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-sm-auto desktop">
+							<div class="logo"><a href="#"><img class="lazyload" data-src="./assets/logo.png" alt=""></a></div>
+						</div>
+						<div class="col-lg-8 col-12">
+							<div class="search">
+								<form>
+									<input type="text">
+									<button>Subscribe</button>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-6">
+							<div class="footer-nav">
+								<h3>Thông tin</h3>
+								<nav><a href="#">Hướng dẫn mua hàng</a><a href="tintuc.html">Tin tức</a><a href="sukien.html">Sự kiện</a><a href="lienhe.html">Liên hệ</a></nav>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-6">
+							<div class="footer-nav">
+								<h3>Liên hệ</h3>
+								<div class="content">
+									<p>Địa chỉ : 29A Nguyễn Thái Học, Phường 1, Quận Bình Thạnh, Tp. HCM.</p>
+									<p>Hotline: 0972 682 724 - 0969 068 388</p>
+									<p>Facebook: https://www.facebook.com/Hana-Clouds-875225812650349/</p>
+									<p>Email: hanaworld.vn@gmail.com</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg"></div>
+						<div class="col-lg-3">
+							<div class="footer-nav">
+								<h3>DỊCH VỤ CSKH</h3>
+								<div class="content">
+									<p>Hãy đễn với hanaworld.vn bạn sẽ được tư vấn và mua hàng một cách tốt nhất.</p>
+								</div>
+								<div class="footer-social"><a href="#"><img class="lazyload" data-src="./assets/icons/icon_pinterest.png" alt=""></a><a href="#"><img class="lazyload" data-src="./assets/icons/icon_facebook.png" alt=""></a><a href="#"><img class="lazyload" data-src="./assets/icons/icon_twitter.png" alt=""></a><a href="#"><img class="lazyload" data-src="./assets/icons/icon_mail.png" alt=""></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>© 2019 Hanaworld. All rights reserved. Designed by <a href="http://web4gsolutions.com/">Web4G</a></p>
+			</div>
+		</footer>
+		<div class="backdrop"></div>
+		<div id="go-top"><svg xmlns="http://www.w3.org/2000/svg" width="31.279" height="40.032" viewBox="0 0 31.279 40.032"><g transform="translate(28.454 38.032) rotate(180)"><g transform="translate(0 0)"><line y2="34.32" transform="translate(12.742)" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></line><path d="M0,0,12.542,11.415,25.632,0" transform="translate(0 23.938)" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></path></g><g transform="translate(0 23.938)"><path d="M0,0,12.542,11.415,25.632,0" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></path></g></g></svg></div>
+		<script type="text/javascript" src="./js/core.min.js"></script>
+		<script type="text/javascript" src="./js/main.min.js"></script>
+	</body>
+</html>
