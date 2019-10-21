@@ -33,6 +33,18 @@
 			.old-price {
 				font-weight: 300;
 			}
+
+			@media (min-width: 1025px) {
+				padding: 5px 0px;
+			}
+
+			@media (min-width: 1440px) {
+				padding: 5px 25px;
+			}
+
+			@media (min-width: 1660px) {
+				padding: 5px 45px;
+			}
 		}
 
 		@media (max-width: 1439.98px) {
@@ -73,13 +85,13 @@
 
 	&:hover {
 		.imgbox {
-			border: 1px solid #707070;
+			border: 1px solid darken(white, 12%);
 		}
 	}
 
 	@media (max-width: 1024.98px) {
 		.imgbox {
-			border: 1px solid darken(white, 15%);
+			border: 1px solid darken(white, 12%);
 		}
 	}
 }

@@ -3,8 +3,10 @@
 .product-filter
 	h2.product-side-title Mức giá
 	.price-slider-wrapper
-		#price-slider(data-default='8670000' data-max='10000000')
-		#price-max
+		#price-slider(data-default='[45000,8670000]' data-max='10000000' data-min="0")
+		.price-wrapper
+			.price#price-min
+			.price#price-max
 	hr
 	h2.product-side-title Dòng sản phẩm
 	nav.product-model

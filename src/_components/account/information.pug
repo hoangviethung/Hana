@@ -1,29 +1,29 @@
 .account-information
 	.block-title
 		h2.sub-title Thông tin tài khoản
-	form.account-form-general.account-info
+	form.account-information-form
 		.row
-			.col-xl-7
+			.col-12
 				.form-group
 					label Họ tên
 					.form-input
 						input(type="text", name="")
-						span.error.mdi.mdi-alert-circle-outline Họ tên không hộp lệ
+						span.field-validation-error Họ tên không hộp lệ
 				.form-group
 					label Điện thoại
 					.form-input
 						input(type="text", name="")
-						span.error.mdi.mdi-alert-circle-outline Số điện thoại không hộp lệ
+						span.field-validation-error Số điện thoại không hộp lệ
 				.form-group
 					label Email
 					.form-input
 						input(type="text", name="")
-						span.error.mdi.mdi-alert-circle-outline Email không hộp lệ
+						span.field-validation-error Email không hộp lệ
 				.form-group
 					label Ngày sinh
 					.form-input
 						input(type="date", name="", value="2020-12-25")
-						span.error.mdi.mdi-alert-circle-outline Ngày tháng không hợp lệ
+						span.field-validation-error Ngày tháng không hợp lệ
 				.form-group
 					label Giới tính
 					.form-radio
@@ -33,22 +33,22 @@
 						.option
 							input#female(type="radio" name="gender")
 							label(for="female") Nữ
-						span.error.mdi.mdi-alert-circle-outline Chưa chọn giới tính
+						span.field-validation-error Chưa chọn giới tính
 
-			.col-xl-5
-				h3.sub-title Liên kết tài khoản mạng xã hội
+			.col-12
+				p Liên kết tài khoản mạng xã hội
 				.social-item
 					.img
 						img.lazyload(data-src="./img/icon/icon-facebook.svg", alt="")
-						span Facebook
+						span + Facebook
 					.status
 						a(href="#").added Đã liên kết
 				.social-item
 					.img
 						img.lazyload(data-src="./img/icon/icon-google.svg", alt="")
-						span Google
+						span + Google
 					.status
 						a(href="#") Chưa liên kết
 			.col-12
-				.button-wrapper
-					a(href="#").btn.btn-main Cập nhật
+				.btn-wrapper
+					button.btn.btn-apply Cập nhật

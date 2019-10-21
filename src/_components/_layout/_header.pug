@@ -1,7 +1,6 @@
 header
 	.container
 		.row.no-gutters
-
 			.logo
 				a(href="/")
 					img(src="./assets/logo.png", alt="")
@@ -27,17 +26,37 @@ header
 						a.nav-sub-link(href="sanpham.html") Sản phẩm khác
 				.nav-item
 					a.nav-link(href="#") Collection
+					.mobile.nav-item-toggle
+						<svg xmlns="http://www.w3.org/2000/svg" width="8" height="21.459" viewBox="0 0 10.091 21.459"><path d="M0,0,9.126,7.407,18.649,0" transform="translate(1.407 20.052) rotate(-90)" fill="none" stroke="#000000" stroke-linecap="round" stroke-width="2"/></svg>
+					.nav-sub
+						.mobile.nav-sub-close
+							<svg xmlns="http://www.w3.org/2000/svg" width="5.395" height="10.477" viewBox="0 0 5.395 10.477"><path d="M4.091,0,0,4.532,4.189,9.064" transform="translate(0.5 0.706)" fill="none" stroke="#1c1c1c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></svg>
+							span Quay lại
+						a.nav-sub-link(href="sanpham.html") Hair Care
+						a.nav-sub-link(href="sanpham.html") Dưỡng Face
+						a.nav-sub-link(href="sanpham.html") TEst
+						a.nav-sub-link(href="sanpham.html") Face
+						a.nav-sub-link(href="sanpham.html") Lipstick
+						a.nav-sub-link(href="sanpham.html") Dưỡng Body
+						a.nav-sub-link(href="sanpham.html") Sản phẩm khác
 				.nav-item
 					a.nav-link(href="#") Cosmetics
 			nav.header-items
-				.item.mobile.menu-toggle.hamburger-1
-					span
-					span
-					span
+				.item.mobile.menu-toggle
+					.hamburger-1
+						span
+						span
+						span
 				.item.login
 					.icon
 						svg(xmlns='http://www.w3.org/2000/svg', width='29.114', height='26.998', viewBox='0 0 29.114 26.998')
 							path(d='M35.171,28.332a4.5,4.5,0,0,0-3.4-1.54H30.111a.845.845,0,1,0,0,1.689h1.657a2.833,2.833,0,0,1,2.116.945,1.757,1.757,0,0,1,.433,1.433l-.332,1.775c-.539,2.435-1.715,2.716-2.554,2.716H20.792c-1.172,0-2.032-.918-2.555-2.729L17.9,30.832a1.555,1.555,0,0,1,.348-1.324,2.958,2.958,0,0,1,2.205-1.026h1.611a.845.845,0,1,0,0-1.689H20.454a4.6,4.6,0,0,0-3.524,1.658,3.2,3.2,0,0,0-.685,2.72l.338,1.8a.773.773,0,0,0,.018.076c.734,2.574,2.222,3.991,4.191,3.991H31.43c1.509,0,3.464-.7,4.208-4.067l.342-1.822A3.446,3.446,0,0,0,35.171,28.332ZM19.748,20.759a26.751,26.751,0,0,0,1.835,3.949c.049.073.1.158.155.251A4.631,4.631,0,0,0,26.1,27.5a4.63,4.63,0,0,0,4.363-2.537c.056-.093.106-.178.155-.251a26.752,26.752,0,0,0,1.835-3.949,1.611,1.611,0,0,0,.978-1.479V17.754a1.608,1.608,0,0,0-.763-1.368v-.54c0-3.634-2.455-5.8-6.567-5.8s-6.567,2.17-6.567,5.8v.548a1.624,1.624,0,0,0-.763,1.359V19.28A1.61,1.61,0,0,0,19.748,20.759Zm.711-2.928a.844.844,0,0,0,.763-.841V15.847c0-1.877.846-4.115,4.878-4.115,3.191,0,4.878,1.423,4.878,4.115v1.145a.844.844,0,0,0,.763.841V19.2a.846.846,0,0,0-.709.544,28.475,28.475,0,0,1-1.82,4.025c-.062.092-.127.2-.2.318A2.944,2.944,0,0,1,26.1,25.808a2.944,2.944,0,0,1-2.915-1.719c-.071-.118-.135-.225-.2-.317a28.556,28.556,0,0,1-1.82-4.025.845.845,0,0,0-.709-.544V17.832Zm-2.4,5.7a.844.844,0,0,0-.845-.845H13.33V18.805a.845.845,0,0,0-1.689,0V22.69H7.756a.845.845,0,1,0,0,1.689h3.885v3.885a.845.845,0,0,0,1.689,0V24.379h3.885A.844.844,0,0,0,18.06,23.535Z', transform='translate(-6.911 -10.042)')
+					.login-panel(style="position: absolute; top: 100%;")
+						a(style="display: block" href="#" data-fancybox='login' data-src="#login") Login
+						a(style="display: block" href="#" data-fancybox='register' data-src="#register") Register
+						a(style="display: block" href="#" data-fancybox='forgot-password' data-src="#forgot-password") Forgot Password
+						a(style="display: block" href="#" data-fancybox='verify-code' data-src="#verify-code") Nhập mã xác thực
+						a(style="display: block" href="#" data-fancybox='reset-password' data-src="#reset-password") Nhập lại mật khẩu
 				.item.search
 					.icon
 						svg(xmlns='http://www.w3.org/2000/svg', width='32.131', height='32.489', viewBox='0 0 32.131 32.489')
@@ -55,3 +74,163 @@ header
 								path#Path_4895(data-name='Path 4895', d='M244.835,996.71h5.05l5.8,20.09h15.686l6.339-13.644-26-.14', transform='translate(-244.835 -996.71)', fill='none', stroke='#201e1e', stroke-miterlimit='10', stroke-width='2')
 								circle#Ellipse_204(data-name='Ellipse 204', cx='2.471', cy='2.471', r='2.471', transform='translate(7.091 25.356)', fill='none', stroke='#201e1e', stroke-miterlimit='10', stroke-width='2')
 								circle#Ellipse_205(data-name='Ellipse 205', cx='2.471', cy='2.471', r='2.471', transform='translate(25.76 25.356)', fill='none', stroke='#201e1e', stroke-miterlimit='10', stroke-width='2')
+					.cart-panel
+						.cart-title
+							svg(xmlns='http://www.w3.org/2000/svg', width='18.4', height='18.4', viewBox='0 0 18.4 18.4')
+								defs
+									style.
+										.a1 {
+										fill: #1c1c1c;
+										}
+										.b2 {
+										fill: none;
+										stroke: #ffffff;
+										stroke-linecap: round;
+										stroke-linejoin: round;
+										}
+								circle.a1(cx='9.2', cy='9.2', r='9.2')
+								g(transform='translate(5.962 7.258)')
+									path.b2(d='M2.246,0,0,2.487,3.9,6.477', transform='translate(0 3.896) rotate(-90)')
+							span Thêm vào giỏ hàng thành công
+						.cart-list
+							.cart-item
+								.info
+									h4.name
+										a(href='sanpham-ct.html') Lorem ipsum dolor, sit amet consectetur adipisicing elit
+									p.brand
+										| Thương hiệu: 
+										b Tannoy
+									p.quantity
+										| Số lượng: 
+										b 1
+									p.price
+										b 99.490.000 đ
+							.cart-item
+								.info
+									h4.name
+										a(href='sanpham-ct.html') Lorem ipsum dolor, sit amet consectetur adipisicing elit
+									p.brand
+										| Thương hiệu: 
+										b Tannoy
+									p.quantity
+										| Số lượng: 
+										b 1
+									p.price
+										b 99.490.000 đ
+							.cart-item
+								.info
+									h4.name
+										a(href='sanpham-ct.html') Lorem ipsum dolor, sit amet consectetur adipisicing elit
+									p.brand
+										| Thương hiệu: 
+										b Tannoy
+									p.quantity
+										| Số lượng: 
+										b 1
+									p.price
+										b 99.490.000 đ
+							.cart-item
+								.info
+									h4.name
+										a(href='sanpham-ct.html') Lorem ipsum dolor, sit amet consectetur adipisicing elit
+									p.brand
+										| Thương hiệu: 
+										b Tannoy
+									p.quantity
+										| Số lượng: 
+										b 1
+									p.price
+										b 99.490.000 đ
+						.cart-button
+							a.btn.btn-apply(href='giohang.html') Xem giỏ hàng và thanh toán
+	.d-none
+		#login.header-account-popup
+			.popup-content
+				h2 Đăng Nhập
+				form
+					.form-group
+						input(type='text' placeholder='Điện thoại/Email')
+					.form-group
+						input(type='password' placeholder='Mật khẩu')
+					.form-row
+						.form-check
+							input#remember-password(type='checkbox')
+							label(for='remember-password') Nhớ tài khoản
+						.form-text
+							a(href="#" data-fancybox='forgot-password2' data-src="#forgot-password") Quên mật khẩu
+					.form-seperate
+						span Hoặc
+					.form-social
+						.icon.google
+							img(src="./assets/icons/google.svg")
+						.icon.facebook
+							img(src="./assets/icons/facebook.svg")
+					.form-button
+						button.btn.btn-apply Đăng nhập
+					.form-bottom
+						p Chưa có tài khoản? 
+							a(href="#" data-fancybox='register2' data-src="#register") Đăng ký
+		#register.header-account-popup
+			.popup-content
+				h2 Đăng ký
+				form
+					.form-group
+						input(type='text' placeholder='Điện thoại/Email')
+					.form-group
+						input(type='password' placeholder='Mật khẩu')
+					.form-row
+						.form-check
+							input#accept-policy(type='checkbox')
+							label(for='accept-policy') Tôi đã đọc và đồng ý với Điều khoản sử dụng
+					.form-seperate
+						span Hoặc
+					.form-social
+						.icon.google
+							img(src="./assets/icons/google.svg")
+						.icon.facebook
+							img(src="./assets/icons/facebook.svg")
+					.form-button
+						button.btn.btn-apply Đăng ký
+					.form-bottom
+						p Đã có tài khoản? 
+							a(href="#" data-fancybox='login2' data-src="#login") Đăng nhập
+		#forgot-password.header-account-popup
+			.popup-content
+				h2 Quên mật khẩu
+				form
+					.form-text
+						p Vui lòng nhập email để lấy mã xác thực và đặt lại mật khẩu.
+					.form-group
+						input(type='text' placeholder='Email')
+					.form-button
+						button.btn.btn-apply Tiếp tục
+					.form-bottom
+						p Hoặc quay lại trang 
+							a(href="#" data-fancybox='login3' data-src="#login") Đăng nhập
+		#verify-code.header-account-popup
+			.popup-content
+				h2 Nhập mã xác thực
+				form
+					.form-text
+						p Mã xác thực sẽ gởi tới email 
+							span test@gmail.com 
+							| Vui lòng nhập mã xác thực để đặt lại mật khẩu
+					.form-group
+						input(type='text' placeholder='Nhập mã xác thực')
+					.form-button
+						button.btn.btn-apply Xác thực
+					.form-bottom
+						p Chưa nhận được mã xác thực? 
+							a(href="#") Gửi lại mã
+		#reset-password.header-account-popup
+				.popup-content
+					h2 Nhập mã xác thực
+					form
+						.form-text
+							p Đặt lại mật khẩu mới mà bạn mong muốn
+						.form-group
+							input(type='password' placeholder='Mật khẩu mới')
+						.form-group
+							input(type='password' placeholder='Nhập lại mật khẩu')
+						.form-button
+							button.btn.btn-apply Tiếp tục

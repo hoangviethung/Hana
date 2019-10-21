@@ -1,4 +1,4 @@
-.cart {
+.cart-list-page {
 	.cart-table-title {
 		display: flex;
 		color: #787878;
@@ -271,27 +271,6 @@
 .cart-popup {
 	overflow: visible;
 	border-radius: 5px;
-
-	.fancybox-close-small {
-		width: 40px;
-		height: 40px;
-		top: -20px;
-		right: -20px;
-		background: black;
-		opacity: 1;
-		padding: 5px;
-
-		svg {
-			path {
-				fill: white;
-			}
-		}
-
-		@media (max-width: 767.98px) {
-			top: 0;
-			right: 0;
-		}
-	}
 
 	h2 {
 		font-size: 20px;

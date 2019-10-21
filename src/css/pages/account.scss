@@ -1,7 +1,36 @@
-.account-sidemenu {
-	width: 360px;
-	padding-right: 100px;
+.account {
+	padding: 40px 0 160px 0;
 
+	.sub-title {
+		font-size: 20px;
+		font-family: $pf;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+
+		@media (max-width: 1024.98px) {
+			margin-bottom: 10px;
+		}
+	}
+
+	.btn-wrapper {
+		margin-top: 50px;
+
+		.btn-apply {
+			height: 50px;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 1199.98px) {
+		padding: 40px 0 80px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 40px 0;
+	}
+}
+
+.account-sidemenu {
 	.account-info {
 		display: flex;
 		align-items: center;
@@ -87,6 +116,412 @@
 					span {
 						color: white;
 					}
+				}
+			}
+		}
+	}
+
+	@media (min-width: 1025px) {
+		width: 360px;
+		padding-right: 100px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 30px;
+			background: darken(white, 8%);
+			height: 100%;
+			width: 1px;
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		margin-bottom: 40px;
+	}
+}
+
+.account-information {
+	.account-information-form {
+		@media (min-width: 1025px) {
+			max-width: 550px;
+		}
+	}
+
+	p {
+		font-size: 18px;
+		font-weight: 300;
+		color: #787878;
+
+		@media (max-width: 1024.98px) {
+			font-size: 16px;
+		}
+	}
+
+	.form-group {
+		display: flex;
+		margin-bottom: 15px;
+
+		>label {
+			flex: 0 0 100px;
+			max-width: 100px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			font-size: 18px;
+			font-weight: 300;
+
+			@media (max-width: 1199.98px) {
+				font-size: 16px;
+			}
+
+			@media (max-width: 767.98px) {
+				font-size: 14px;
+			}
+		}
+
+		>.form-input {
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+
+			.field-validation-error {
+				text-align: left;
+			}
+		}
+
+		input[type='text'],
+		input[type='date'],
+		select {
+			border: 1px solid #DFDFDF;
+			height: 40px;
+			border-radius: 5px;
+			width: 100%;
+			padding: 8px 15px;
+			color: #787878;
+			font-weight: 300;
+
+			&::placeholder {
+				color: #787878;
+			}
+		}
+
+		>.form-radio {
+			display: flex;
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+			flex-wrap: wrap;
+
+			.field-validation-error {
+				flex: 0 0 100%;
+				max-width: 100%;
+				text-align: left;
+			}
+
+			.option {
+				height: 40px;
+				display: flex;
+				align-items: center;
+
+				label {
+					position: relative;
+					padding-left: 25px;
+					cursor: pointer;
+
+					&:before {
+						position: absolute;
+						top: 3px;
+						width: 14px;
+						height: 14px;
+						left: 0;
+						border-radius: 50%;
+						border: 1px solid darken(white, 15%);
+						content: '';
+					}
+				}
+
+				input[type='radio'] {
+					display: none;
+
+					&:checked~label:before {
+						box-shadow: inset 0 0 0 2px white;
+						background: red;
+					}
+				}
+
+				+.option {
+					margin-left: 30px;
+				}
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			flex-wrap: wrap;
+
+			>label {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+
+	.social-item {
+		display: inline-flex;
+		width: 49%;
+
+		.status {
+			margin-left: 15px;
+		}
+
+		span {
+			color: #787878;
+		}
+
+		a {
+			color: map-get($mau, main);
+
+			&.added {
+				color: #E1E2E1;
+			}
+		}
+	}
+
+}
+
+.account-change-password {
+	.account-change-password-form {
+		@media (min-width: 1025px) {
+			max-width: 550px;
+		}
+	}
+
+	.form-group {
+		display: flex;
+		margin-bottom: 15px;
+
+		>label {
+			flex: 0 0 220px;
+			max-width: 220px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			font-size: 18px;
+			font-weight: 300;
+
+			@media (max-width: 1199.98px) {
+				font-size: 16px;
+			}
+
+			@media (max-width: 767.98px) {
+				font-size: 14px;
+			}
+		}
+
+		>.form-input {
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+
+			.field-validation-error {
+				text-align: left;
+			}
+		}
+
+		input[type='password'],
+		select {
+			border: 1px solid #DFDFDF;
+			height: 40px;
+			border-radius: 5px;
+			width: 100%;
+			padding: 8px 15px;
+			color: #787878;
+			font-weight: 300;
+
+			&::placeholder {
+				color: #787878;
+			}
+		}
+
+		>.form-radio {
+			display: flex;
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+			flex-wrap: wrap;
+
+			.field-validation-error {
+				flex: 0 0 100%;
+				max-width: 100%;
+				text-align: left;
+			}
+
+			.option {
+				height: 40px;
+				display: flex;
+				align-items: center;
+
+				label {
+					position: relative;
+					padding-left: 25px;
+					cursor: pointer;
+
+					&:before {
+						position: absolute;
+						top: 3px;
+						width: 14px;
+						height: 14px;
+						left: 0;
+						border-radius: 50%;
+						border: 1px solid darken(white, 15%);
+						content: '';
+					}
+				}
+
+				input[type='radio'] {
+					display: none;
+
+					&:checked~label:before {
+						box-shadow: inset 0 0 0 2px white;
+						background: red;
+					}
+				}
+
+				+.option {
+					margin-left: 30px;
+				}
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			flex-wrap: wrap;
+
+			>label {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.account-order {
+	.pagination {
+		margin-top: 40px;
+	}
+}
+
+.account-order-table {
+	width: 100%;
+
+	thead {
+		tr {
+			border-bottom: 1px solid #F5F5F5;
+		}
+
+		th {
+			font-size: 16px;
+			height: 70px;
+
+			&:first-child {
+				width: 630px;
+
+				@media (max-width: 1659.98px) {
+					width: 530px
+				}
+
+				@media (max-width: 1439.98px) {
+					width: 430px;
+				}
+
+				@media (max-width: 1199.98px) {
+					width: 330px;
+				}
+			}
+
+			&:nth-child(2) {
+				text-align: center;
+			}
+
+			&:last-child {
+				text-align: right;
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			display: none;
+		}
+	}
+
+	tbody {
+		tr {
+			border-bottom: 1px solid #F5F5F5;
+
+		}
+
+		td {
+			padding: 20px 0;
+			font-size: 14px;
+			font-weight: 300;
+			color: #1c1c1c;
+
+			a {
+				color: #1c1c1c;
+			}
+
+			&:nth-child(2) {
+				text-align: center;
+			}
+
+			&:last-child {
+				color: #D82F25;
+				text-align: right;
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -10px;
+
+			tr {
+				flex: 0 0 50%;
+				max-width: 50%;
+				padding: 0 10px;
+				border: none;
+				padding: 20px;
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+
+				&:after {
+					content: '';
+					top: 10px;
+					left: 10px;
+					bottom: 10px;
+					right: 10px;
+					box-shadow: 0 0 5px rgba(black, .15);
+					position: absolute;
+					z-index: 1;
+				}
+
+				td {
+					padding: 0px;
+					margin-bottom: 8px;
+					flex: 0 0 100%;
+					max-width: 100%;
+					position: relative;
+					z-index: 2;
+
+					&:nth-child(2),
+					&:last-child,
+					&:first-child {
+						text-align: left;
+					}
+				}
+
+				@media (max-width: 767.98px) {
+					flex: 0 0 100%;
+					max-width: 100%;
 				}
 			}
 		}

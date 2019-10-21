@@ -2,9 +2,14 @@
 const homeBanner = () => {
 	return new Swiper('.home-banner .swiper-container', {
 		slidesPerView: 1,
-		effect: 'fade',
-		fadeEffect: {
-			crossFade: true,
+		autoplay: {
+			delay: 3500,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.home-banner .swiper-container .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
 		},
 		speed: 1000,
 	})
@@ -31,7 +36,12 @@ const productSlider = () => {
 			768: {
 				slidesPerView: 2,
 			}
-		}
+		},
+		pagination: {
+			el: '.index-1 .home-product-slider .swiper-container .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
 	})
 }
 
@@ -252,18 +262,23 @@ const Header = () => {
 	const navItemButton = Array.from(document.querySelectorAll('.nav-item-toggle'));
 	const navItemClose = Array.from(document.querySelectorAll('.nav-sub-close'));
 	const searchToggle = document.querySelector('.header-items .item.search .icon');
+	const cartToggle = document.querySelector('.header-items .item.cart .icon');
+	const html = document.querySelector('html');
 
 	buttonMenuToggle.addEventListener('click', function() {
-		this.classList.toggle('active')
-		if (this.classList.contains('active')) {
+		this.querySelector('.hamburger-1').classList.toggle('active')
+		if (this.querySelector('.hamburger-1').classList.contains('active')) {
 			headerNav.classList.add('mobile-active');
+			html.classList.add('ofh');
 		} else {
 			headerNav.classList.remove('mobile-active');
+			html.classList.remove('ofh');
 		}
 		navItemClose.forEach(navItem => {
-			navItem.parentNode.classList.remove('mobile-active')
+			navItem.parentNode.classList.remove('mobile-active');
 		})
-		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active')
+		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
+		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
 	})
 
 	navItemButton.forEach(navItem => {
@@ -279,25 +294,52 @@ const Header = () => {
 	})
 
 	searchToggle.addEventListener('click', function() {
+		this.parentNode.querySelector('.search-form').classList.toggle('mobile-active');
 		headerNav.classList.remove('mobile-active');
-		buttonMenuToggle.classList.remove('active')
-		this.parentNode.querySelector('.search-form').classList.toggle('mobile-active')
+		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active')
+		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
 	})
+
+	cartToggle.addEventListener('click', function() {
+		cartToggle.parentNode.querySelector('.cart-panel').classList.toggle('open');
+		headerNav.classList.remove('mobile-active');
+		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active')
+		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
+	})
+
+
+	const bp = window.matchMedia('(max-width: 1024px)');
+	const setLogoInMenuMobile = (bp) => {
+		const logoMobile = document.querySelector('header .logo').cloneNode();
+		logoMobile.classList.add('nav-item');
+		if (bp.matches) {
+			headerNav.insertBefore(logoMobile, headerNav.querySelector('.first-item'));
+		} else {
+			console.log(bp.matches);
+		}
+	}
+	setLogoInMenuMobile(bp);
+	bp.addListener(setLogoInMenuMobile);
+
 }
 
 const filterPriceSlider = () => {
 	if (document.getElementById('price-slider')) {
 		if (document.querySelector('#price-slider')) {
 			const defaultValue = JSON.parse(document.getElementById('price-slider').getAttribute('data-default'));
+			const minPrice = Number(document.getElementById('price-slider').getAttribute('data-min'));
 			const maxPrice = Number(document.getElementById('price-slider').getAttribute('data-max'));
-			document.getElementById('price-max').textContent = maxPrice.toLocaleString() + '₫';
+			document.getElementById('price-max').textContent = defaultValue[1].toLocaleString() + '₫';
+			document.getElementById('price-min').textContent = defaultValue[0].toLocaleString() + '₫';
 			$("#price-slider").slider({
 				values: defaultValue,
 				max: maxPrice,
+				min: minPrice,
 				range: true,
 				step: 5000,
 				slide: function(event, ui) {
-					document.getElementById('price-max').textContent = ui.value.toLocaleString() + '₫';
+					document.getElementById('price-max').textContent = ui.values[1].toLocaleString() + '₫';
+					document.getElementById('price-min').textContent = ui.values[0].toLocaleString() + '₫';
 				}
 			});
 		}
