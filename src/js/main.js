@@ -263,6 +263,7 @@ const Header = () => {
 	const navItemClose = Array.from(document.querySelectorAll('.nav-sub-close'));
 	const searchToggle = document.querySelector('.header-items .item.search .icon');
 	const cartToggle = document.querySelector('.header-items .item.cart .icon');
+	const loginToggle = document.querySelector('.header-items .item.login .icon');
 	const html = document.querySelector('html');
 
 	buttonMenuToggle.addEventListener('click', function() {
@@ -298,15 +299,23 @@ const Header = () => {
 		headerNav.classList.remove('mobile-active');
 		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active')
 		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
+		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
 
 	cartToggle.addEventListener('click', function() {
 		cartToggle.parentNode.querySelector('.cart-panel').classList.toggle('open');
 		headerNav.classList.remove('mobile-active');
-		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active')
+		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active');
+		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
+		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
+	})
+	loginToggle.addEventListener('click', function() {
+		loginToggle.parentNode.querySelector('.login-panel').classList.toggle('open');
+		headerNav.classList.remove('mobile-active');
+		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
+		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active');
 		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
 	})
-
 
 	const bp = window.matchMedia('(max-width: 1024px)');
 	const setLogoInMenuMobile = (bp) => {
@@ -393,6 +402,11 @@ const configFancybox = () => {
 	$('[data-fancybox]').fancybox({
 		hash: false,
 		closeExisting: true,
+		beforeShow: function(instance, current) {
+			Array.from(document.querySelectorAll('.mobile-active')).forEach(el => {
+				console.log(el);
+			})
+		}
 	})
 }
 

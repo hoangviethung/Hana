@@ -65,3 +65,31 @@
 		font-size: 14px;
 	}
 }
+
+.btn-login {
+	height: 45px;
+	width: 250px;
+	background: map-get($mau, main);
+	color: white;
+	font-size: 18px;
+	border-radius: 5px;
+
+	&:hover {
+		background: lighten(map-get($mau, main), 8%);
+		color: white;
+	}
+}
+
+.btn-register {
+	height: 45px;
+	width: 250px;
+	background: darken(white, 8%);
+	color: #1c1c1c;
+	font-size: 18px;
+	border-radius: 5px;
+
+	&:hover {
+		background: darken(white, 15%);
+		color: #1c1c1c;
+	}
+}

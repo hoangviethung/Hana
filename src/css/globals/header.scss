@@ -226,6 +226,53 @@ header {
 		}
 	}
 
+	.login {
+		.login-panel {
+			border-radius: 5px;
+			padding: 15px;
+			background: white;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(10px);
+			transition: all .3s ease-out;
+
+			&.open {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+
+			.btn-login {
+				margin-bottom: 10px;
+			}
+
+			&:after {
+				content: '';
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				border-bottom: 17px solid white;
+				position: absolute;
+				bottom: 100%;
+				right: 170px;
+				z-index: 2;
+			}
+
+			&:before {
+				content: '';
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-bottom: 19px solid rgba(#707070, .35);
+				position: absolute;
+				bottom: 100%;
+				right: 169px;
+				z-index: 2;
+			}
+		}
+	}
+
 	@media (min-width: 1025px) {
 		position: fixed;
 		width: 100%;
