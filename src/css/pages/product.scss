@@ -586,8 +586,24 @@
 	.product-filter {
 		max-width: 260px;
 		width: 100%;
-		height: 100%;
-		overflow-y: auto;
+
+		@media (max-width: 1439.98px) {
+			max-width: 220px;
+		}
+
+		@media (max-width: 1024.98px) {
+			max-width: 100%;
+			padding: 0 15px;
+		}
+	}
+
+	.product-filter-button {
+		max-width: 260px;
+		margin-top: 15px;
+
+		.btn-apply {
+			height: 35px;
+		}
 
 		@media (max-width: 1439.98px) {
 			max-width: 220px;
@@ -618,18 +634,19 @@
 		margin-bottom: 20px;
 
 		.filter-toggle {
-			max-width: 240px;
+			max-width: 100%;
 			margin: -40px auto 0 auto;
 			height: 40px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			border: 1px solid rgba(0, 0, 0, .2);
-			background: darken(white, 3%);
+			background: #000000;
 
 			span {
 				font-size: 14px;
 				margin-left: 10px;
+				color: white;
 			}
 
 			&.mobile-fixed {
@@ -642,12 +659,11 @@
 				left: 0;
 				right: 0;
 				z-index: 21;
-				background: white;
 				margin-top: 0;
-			}
 
-			&.filter-active {
-				margin-top: -90px;
+				&.filter-active {
+					margin-top: -90px;
+				}
 			}
 		}
 	}

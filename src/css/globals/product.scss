@@ -17,7 +17,6 @@
 		padding: 20px 5px;
 
 		h3 {
-			font-family: $pf;
 			text-transform: uppercase;
 			color: #221C21;
 			margin-bottom: 8px;
@@ -25,13 +24,14 @@
 
 		.price-wrapper {
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
 			font-size: 18px;
 			color: #787878;
 
 			.price,
 			.old-price {
 				font-weight: 300;
+				margin: 0 35px;
 			}
 
 			@media (min-width: 1025px) {
@@ -54,12 +54,22 @@
 		@media (max-width: 1199.98px) {
 			.price-wrapper {
 				font-size: 16px;
+
+				.price,
+				.old-price {
+					margin: 0 25px;
+				}
 			}
 		}
 
 		@media (max-width: 767.98px) {
 			.price-wrapper {
 				font-size: 14px;
+
+				.price,
+				.old-price {
+					margin: 0 15px;
+				}
 			}
 		}
 	}
@@ -69,7 +79,6 @@
 		top: 1px;
 		left: 1px;
 		background: #FCE4EC;
-		font-family: $pf;
 		font-weight: 700;
 		text-align: center;
 		text-transform: uppercase;
@@ -84,12 +93,6 @@
 	}
 
 	&:hover {
-		.imgbox {
-			border: 1px solid darken(white, 12%);
-		}
-	}
-
-	@media (max-width: 1024.98px) {
 		.imgbox {
 			border: 1px solid darken(white, 12%);
 		}

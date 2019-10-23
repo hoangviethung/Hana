@@ -4,7 +4,7 @@ footer {
 
 	@media (max-width: 1024.98px) {
 		padding-top: 30px;
-		padding-bottom: 40px;
+		padding-bottom: 50px;
 	}
 
 	h3 {
@@ -114,7 +114,6 @@ footer {
 			height: 60px;
 			width: 210px;
 			border: 1px solid #707070;
-			background: transparent;
 			font-weight: 700;
 			font-size: 20px;
 			text-transform: uppercase;
@@ -123,21 +122,9 @@ footer {
 			justify-content: center;
 			align-items: center;
 
-			@media (min-width: 1025px) {
-
-				&:hover,
-				&:active {
-					background: map-get($mau, main);
-					color: white;
-					border: 1px solid map-get($mau, main);
-				}
-			}
-
 			@media (max-width: 1024.98px) {
-				background: map-get($mau, main);
 				margin-left: 0;
 				border: 0;
-				color: white;
 				height: 40px;
 			}
 		}
