@@ -58,16 +58,12 @@ header {
 				color: map-get($mau, den);
 				padding: 20px 0;
 
-				@media (max-width: 1659.98px) {
-					font-size: 22px;
-				}
-
 				@media (max-width: 1439.98px) {
-					font-size: 20px;
+					font-size: 18px;
 				}
 
 				@media (max-width: 1199.98px) {
-					font-size: 18px;
+					font-size: 16px;
 				}
 			}
 		}
@@ -151,6 +147,10 @@ header {
 
 			+.item {
 				margin-left: 50px;
+			}
+
+			svg {
+				width: 28px;
 			}
 		}
 	}
