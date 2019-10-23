@@ -53,10 +53,6 @@ const collectionSlider = () => {
 	return new Swiper('.index-2 .swiper-container', {
 		slidesPerView: 1,
 		loop: true,
-		// autoplay: {
-		// 	delay: 4000,
-		// 	disableOnInteraction: false,
-		// },
 		observer: true,
 		observerParents: true,
 		navigation: {

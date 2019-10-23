@@ -23,16 +23,16 @@ footer {
 	}
 
 	p {
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: 300;
 		color: #221C21;
 
 		@media (max-width: 1199.98px) {
-			font-size: 18px;
+			font-size: 16px;
 		}
 
 		@media (max-width: 767.98px) {
-			font-size: 16px;
+			font-size: 14px;
 		}
 	}
 
@@ -46,7 +46,7 @@ footer {
 			a {
 				flex: 0 0 100%;
 				max-width: 100%;
-				font-size: 20px;
+				font-size: 18px;
 				color: #221C21;
 				font-weight: 300;
 
@@ -55,11 +55,11 @@ footer {
 				}
 
 				@media (max-width: 1199.98px) {
-					font-size: 18px;
+					font-size: 16px;
 				}
 
 				@media (max-width: 767.98px) {
-					font-size: 16px;
+					font-size: 14px;
 				}
 			}
 		}

@@ -1,5 +1,10 @@
 .news-banner
-	.row
+	.row.mobile
+		.col-12
+			h1 Tin tức
+		.col-12(data-aos='fade-up')
+			+news(1)
+	.row.desktop
 		.col-lg-6(data-aos='fade-right')
 			h1 Tin tức
 			h2 Happy Hana 3rd Anniversary, 
@@ -8,4 +13,5 @@
 			p Những bộ sản phẩm đặc biệt nhằm gửi gắm tình yêu của Hana đến bạn qua hình ảnh những thành phố thân yêu.
 		.col-lg-6(data-aos='fade-left')
 			.imgbox
-				img.lazyload(src='./assets/banner/b_3.jpg', alt='')
+				a(href="tintuc-ct.html")
+					img.lazyload(src='./assets/banner/b_3.jpg', alt='')
