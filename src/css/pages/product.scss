@@ -132,6 +132,10 @@
 				img {
 					width: 100%;
 				}
+
+				@media (max-width: 1024.98px) {
+					padding: 50px;
+				}
 			}
 		}
 
@@ -139,12 +143,6 @@
 			flex: 0 0 535px;
 			max-width: 535px;
 			padding-right: 10px;
-		}
-
-		@media (max-width: 1024.98px) {
-			img {
-				object-fit: contain;
-			}
 		}
 
 		.small-image {
@@ -189,9 +187,8 @@
 		}
 
 		@media (max-width: 1024.98px) {
-			margin: 0 auto;
-			flex: 0 0 100%;
-			max-width: 450px;
+			flex: 0 0 50%;
+			max-width: 50%;
 
 			.big-image {
 				flex: 0 0 100%;
@@ -266,7 +263,9 @@
 		}
 
 		.btn-apply {
-			width: 220px;
+			width: 100%;
+			max-width: 480px;
+			margin: 0 auto;
 			height: 55px;
 		}
 
@@ -303,7 +302,15 @@
 			}
 		}
 
+		@media (max-width: 1024.98px) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+
 		@media (max-width: 767.98px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+
 			h1 {
 				font-size: 26px;
 			}

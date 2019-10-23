@@ -1,4 +1,8 @@
 // Define function, variables
+import {
+	initMap
+} from "./map";
+
 const homeBanner = () => {
 	return new Swiper('.home-banner .swiper-container', {
 		slidesPerView: 1,
@@ -34,7 +38,7 @@ const productSlider = () => {
 				slidesPerView: 3,
 			},
 			768: {
-				slidesPerView: 2,
+				slidesPerView: 1,
 			}
 		},
 		pagination: {
@@ -310,7 +314,7 @@ const Header = () => {
 		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
-	
+
 	loginToggle.addEventListener('click', function() {
 		loginToggle.parentNode.querySelector('.login-panel').classList.toggle('open');
 		headerNav.classList.remove('mobile-active');
@@ -333,7 +337,6 @@ const Header = () => {
 	// }
 	// setLogoInMenuMobile(bp);
 	// bp.addListener(setLogoInMenuMobile);
-
 }
 
 const filterPriceSlider = () => {
@@ -405,17 +408,22 @@ const toggleFilterMobile = () => {
 const configFancybox = () => {
 	$('[data-fancybox]').fancybox({
 		hash: false,
-		closeExisting: true,
-		beforeShow: function(instance, current) {
-			Array.from(document.querySelectorAll('.mobile-active')).forEach(el => {
-				console.log(el);
-			})
-		}
+		closeExisting: true
 	})
+}
+
+const moveCartBack = () => {
+	const cartBack = document.querySelector('.cart-back');
+	const cartCheckout = document.querySelector('.cart-checkout');
+	const bp = window.matchMedia('(max-width: 767.98px)');
+	if (cartBack && window.innerWidth < 768) {
+		cartCheckout.parentNode.appendChild(cartBack, cartCheckout);
+	}
 }
 
 // Call functions here
 document.addEventListener("DOMContentLoaded", () => {
+	initMap();
 	objectFitImages('.ofc');
 	fixedHeaderActive();
 	toggleGoTopButton();
@@ -434,6 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	productRelatedSlider();
 	filterPriceSlider();
 	toggleFilterMobile();
+	moveCartBack();
 })
 window.addEventListener('scroll', () => {
 	fixedHeaderActive();

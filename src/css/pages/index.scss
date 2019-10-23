@@ -2,6 +2,10 @@
 	.swiper-slide {
 		position: relative;
 
+		img {
+			width: 100%;
+		}
+
 		.content {
 			position: absolute;
 			top: 0;
@@ -10,11 +14,33 @@
 			width: 100%;
 			display: flex;
 			align-items: center;
+
+			@media (max-width: 767.98px) {
+				bottom: 30px;
+				top: unset;
+				align-items: flex-end;
+			}
 		}
 
 		.text {
 			max-width: 700px;
 			padding-left: 30px;
+
+			@media (max-width: 1439.98px) {
+				max-width: 620px;
+			}
+
+			@media (max-width: 1199.98px) {
+				max-width: 540px;
+			}
+
+			@media (max-width: 1024.98px) {
+				max-width: 440px;
+			}
+
+			@media (max-width: 767.98px) {
+				margin: 0 auto;
+			}
 		}
 
 		h2 {
@@ -22,17 +48,50 @@
 			font-weight: 900;
 			font-family: $pf;
 			margin-bottom: 25px;
+
+			@media (max-width: 1439.98px) {
+				font-size: 60px;
+			}
+
+			@media (max-width: 1199.98px) {
+				font-size: 45px;
+			}
+
+			@media (max-width: 1024.98px) {
+				font-size: 32px;
+			}
+
+			@media (max-width: 767.98px) {
+				text-align: center;
+				font-size: 18px;
+				margin-bottom: 15px;
+			}
 		}
 
 		p {
 			font-size: 24px;
 			font-weight: 300;
+
+			@media (max-width: 1439.98px) {
+				font-size: 23px;
+			}
+
+			@media (max-width: 1199.98px) {
+				font-size: 22px;
+			}
+
+			@media (max-width: 1024.98px) {
+				font-size: 21px;
+			}
+
+			@media (max-width: 767.98px) {
+				display: none;
+			}
 		}
 	}
 
 	.swiper-pagination {
 		bottom: 60px;
-		text-align: left;
 		padding: 0 140px;
 		display: flex;
 		align-items: center;
@@ -49,6 +108,23 @@
 			height: 18px;
 			background: #1c1c1c;
 		}
+
+		@media (max-width: 767.98px) {
+			justify-content: center;
+			bottom: 15px;
+
+			.swiper-pagination-bullet {
+				width: 10px;
+				height: 10px;
+				background: white;
+				margin: 0 8px;
+			}
+
+			.swiper-pagination-bullet-active {
+				width: 15px;
+				height: 15px;
+			}
+		}
 	}
 }
 
@@ -62,6 +138,13 @@
 
 .index-1 {
 	background: #FCE4EC;
+
+	.row {
+		@media (max-width: 767.98px) {
+			flex-direction: row-reverse;
+			align-items: center;
+		}
+	}
 
 	.home-product-slider {
 		position: relative;
@@ -111,6 +194,20 @@
 
 		.swiper-pagination-bullet-active {
 			background: #1c1c1c;
+		}
+
+		@media (max-width: 767.98px) {
+			display: none;
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.home-title {
+			text-align: right;
+
+			&-description {
+				text-align: right;
+			}
 		}
 	}
 }
@@ -224,6 +321,87 @@
 			margin-top: 120px;
 		}
 	}
+
+	@media (max-width: 1439.98px) {
+		.content {
+			padding-left: 110px;
+
+			.btn-buy {
+				margin-top: 60px;
+			}
+
+			p {
+				font-size: 18px;
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		.home-title-description {
+			display: none;
+		}
+
+		.row-image {
+			display: none;
+		}
+
+		.content {
+			padding: 30px 10px;
+			max-width: 100%;
+
+			h2 {
+				margin-bottom: 10px;
+			}
+
+			h5 {
+				font-size: 14px;
+			}
+
+			p {
+				font-size: 14px;
+			}
+
+			.btn-buy {
+				margin-top: 40px;
+				max-width: 120px;
+				height: 35px;
+				margin: 0 auto;
+				font-size: 14px;
+			}
+		}
+
+		.swiper-slide {
+			.col-content {
+				order: 2;
+			}
+
+			.slide-img {
+				order: 1;
+			}
+		}
+
+		.swiper-prev,
+		.swiper-next {
+			top: 30%;
+		}
+
+		.swiper-prev {
+			left: 10px;
+			margin-left: 0;
+		}
+
+		.swiper-next {
+			right: 10px;
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.content {
+			.btn-buy {
+				margin-top: 25px;
+			}
+		}
+	}
 }
 
 .index-3 {
@@ -234,6 +412,18 @@
 
 	.row {
 		align-items: flex-end;
+	}
+
+	.swiper-container {
+		.swiper-prev {
+			left: 41.6666%;
+		}
+	}
+
+	.swiper-slide {
+		.slide-img {
+			padding: 0 10px;
+		}
 	}
 
 	.content {
@@ -260,11 +450,46 @@
 			max-width: 300px;
 			border: 3px solid white;
 		}
+
+		@media (max-width: 1439.98px) {
+			&:after {
+				margin-right: -50px;
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			max-width: 100%;
+			text-align: center;
+
+			&:after {
+				content: none;
+			}
+
+			.btn-buy {
+				width: 140px;
+				height: 35px;
+				border: 1px solid white;
+			}
+		}
 	}
 
-	.swiper-container {
-		.swiper-prev {
-			left: 41.6666%;
+	@media (max-width: 1024.98px) {
+		padding-bottom: 10px;
+
+		.swiper-container {
+
+			.swiper-next,
+			.swiper-prev {
+				top: 25%;
+			}
+
+			.swiper-next {
+				right: 20px;
+			}
+
+			.swiper-prev {
+				left: 20px;
+			}
 		}
 	}
 }

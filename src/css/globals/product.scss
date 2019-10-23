@@ -125,11 +125,11 @@
 		}
 
 		@media (max-width: 1199.98px) {
-			font-size: 20px;
+			font-size: 19px;
 		}
 
 		@media (max-width: 767.98px) {
-			font-size: 16px;
+			font-size: 14px;
 		}
 	}
 
@@ -150,6 +150,7 @@
 
 			@media (max-width: 767.98px) {
 				height: 40px;
+				display: none;
 			}
 		}
 	}

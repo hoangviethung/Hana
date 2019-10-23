@@ -9,9 +9,10 @@
 			"bower_components/mdi/fonts/**"
 		],
 		"js": [
-			"bower_components/object-fit-images/dist/ofi.browser.js",
+			"vendors/polyfill.array.js",
 			"bower_components/lazysizes/lazysizes.js",
-			"_vendor/ls.unveilhooks.min.js",
+			"bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.js",
+			"bower_components/object-fit-images/dist/ofi.browser.js",
 			"bower_components/swiper/dist/js/swiper.js",
 			"bower_components/jquery/dist/jquery.min.js",
 			"bower_components/jquery-ui/jquery-ui.js",

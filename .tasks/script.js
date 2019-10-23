@@ -26,15 +26,15 @@ export const jsTask = () => {
 		.pipe(source('main.js'))
 		.pipe(buffer())
 		.pipe(plumber(function(err) {
-			console.log("========= ERROR! =========");
 			console.log(err);
-			console.log("=========================");
 			this.emit('end');
 		}))
 		.pipe(sourcemap.init({
 			loadMaps: true
 		}))
-		.pipe(uglifyBabel())
+		.pipe(uglifyBabel({
+			mangle: false,
+		}))
 		.pipe(rename({
 			suffix: ".min"
 		}))
