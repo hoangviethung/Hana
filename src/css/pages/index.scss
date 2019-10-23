@@ -48,6 +48,10 @@
 			font-weight: 900;
 			font-family: $pf;
 			margin-bottom: 25px;
+			opacity: 0;
+			transform: translateX(-20px);
+			transition: all .3s ease-out;
+			transition-delay: 0.8s;
 
 			@media (max-width: 1439.98px) {
 				font-size: 60px;
@@ -71,6 +75,10 @@
 		p {
 			font-size: 24px;
 			font-weight: 300;
+			opacity: 0;
+			transform: translateX(-20px);
+			transition: all .3s ease-out;
+			transition-delay: 1.2s;
 
 			@media (max-width: 1439.98px) {
 				font-size: 23px;
@@ -86,6 +94,18 @@
 
 			@media (max-width: 767.98px) {
 				display: none;
+			}
+		}
+
+		&.swiper-slide-active {
+			h2 {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+
+			p {
+				opacity: 1;
+				transform: translateX(0px);
 			}
 		}
 	}

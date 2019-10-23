@@ -57,6 +57,8 @@ const collectionSlider = () => {
 		// 	delay: 4000,
 		// 	disableOnInteraction: false,
 		// },
+		observer: true,
+		observerParents: true,
 		navigation: {
 			prevEl: '.index-2 .swiper-prev',
 			nextEl: '.index-2 .swiper-next',
@@ -71,6 +73,8 @@ const cosmeticSlider = () => {
 		speed: 1000,
 		spaceBetween: 20,
 		loop: true,
+		observer: true,
+		observerParents: true,
 		autoplay: {
 			delay: 4000,
 			disableOnInteraction: false,
@@ -323,20 +327,22 @@ const Header = () => {
 		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
 	})
 
-	// const bp = window.matchMedia('(max-width: 1024px)');
-	// const setLogoInMenuMobile = (bp) => {
-	// 	const logoMobile = document.querySelector('header .logo').cloneNode();
-	// 	logoMobile.classList.add('nav-item');
-	// 	if (bp.matches) {
-	// 		headerNav.insertBefore(logoMobile, headerNav.querySelector('.first-item'));
-	// 	} else {
-	// 		if (document.querySelector('.nav-item.logo')) {
-	// 			document.querySelector('.nav-item.logo').parentNode.removeChild(document.querySelector('.nav-item.logo'));
-	// 		}
-	// 	}
-	// }
-	// setLogoInMenuMobile(bp);
-	// bp.addListener(setLogoInMenuMobile);
+	const bp = window.matchMedia('(max-width: 1024px)');
+	const homePageLink = document.querySelector('.nav-item.home-page');
+	const firstItem = document.querySelector('.nav-item.first-item');
+	const setLogoInMenuMobile = (bp) => {
+		const logoMobile = document.querySelector('header .logo').cloneNode();
+		logoMobile.classList.add('nav-item');
+		if (bp.matches) {
+			firstItem.parentNode.insertBefore(homePageLink, firstItem);
+		} else {
+			if (document.querySelector('.nav-item.home-page')) {
+				homePageLink.parentNode.removeChild(homePageLink)
+			}
+		}
+	}
+	setLogoInMenuMobile(bp);
+	bp.addListener(setLogoInMenuMobile);
 }
 
 const filterPriceSlider = () => {
@@ -443,7 +449,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	filterPriceSlider();
 	toggleFilterMobile();
 	moveCartBack();
+	AOS.init({
+
+		offset: 150, // offset (in px) from the original trigger point
+		delay: 250, // values from 0 to 3000, with step 50ms
+		duration: 800, // values from 0 to 3000, with step 50ms
+		easing: 'ease-in-out', // default easing for AOS animations
+		once: true, // whether animation should happen only once - while scrolling down
+		mirror: false, // whether elements should animate out while scrolling past them
+		anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+	});
 })
+
 window.addEventListener('scroll', () => {
 	fixedHeaderActive();
 	toggleGoTopButton();

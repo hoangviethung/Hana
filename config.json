@@ -21,13 +21,15 @@
 			"bower_components/imagesloaded/imagesloaded.pkgd.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
 			"vendors/mapping.js",
-			"vendors/mapping-listener.js"
+			"vendors/mapping-listener.js",
+			"bower_components/aos/dist/aos.js"
 		],
 		"css": [
 			"bower_components/swiper/dist/css/swiper.css",
 			"bower_components/jquery-ui/themes/smoothness/jquery-ui.css",
 			"bower_components/jquery-ui/themes/smoothness/theme.css",
-			"bower_components/fancybox/dist/jquery.fancybox.css"
+			"bower_components/fancybox/dist/jquery.fancybox.css",
+			"bower_components/aos/dist/aos.css"
 		]
 	}
 }
