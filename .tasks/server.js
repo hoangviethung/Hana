@@ -10,7 +10,7 @@ import pugTask from "./html"
 import cssCore from "./core-css"
 import cssTask from "./css"
 import {
-	copyAssets
+	copyAssets,
 } from "./copy";
 import {
 	cleanAssets
@@ -29,7 +29,7 @@ export const server = () => {
 		"src/js/*.js"
 	], {
 		delay: 750
-	}, series(jsTask));
+	}, parallel(jsTask));
 
 	watch([
 		"src/**.pug",

@@ -1,13 +1,14 @@
-export const initMap = (option) => {
-	if (document.getElementById('map')) {
-		const location = {
-			lat: 10.800151,
-			lng: 106.698085
-		};
-		const map = new google.maps.Map(document.getElementById('map'), {
-			center: location,
+module.exports = () => {
+	const mapSelector = document.querySelector('#map');
+	const dealerLocatorList = document.querySelector('.dealer-locator-list .list');
+
+	if (mapSelector) {
+		let map, markers = [], itemClicked;
+		const locations = locationsInput;
+		const mapOption = {
 			zoom: 12,
-			styles: [{
+			styles: [
+				{
 					"featureType": "administrative",
 					"elementType": "labels.text.fill",
 					"stylers": [{
@@ -39,8 +40,8 @@ export const initMap = (option) => {
 					"featureType": "road",
 					"elementType": "all",
 					"stylers": [{
-							"saturation": -100
-						},
+						"saturation": -100
+					},
 						{
 							"lightness": 45
 						}
@@ -71,19 +72,88 @@ export const initMap = (option) => {
 					"featureType": "water",
 					"elementType": "all",
 					"stylers": [{
-							"color": "#e6d3d9"
-						},
+						"color": "#e6d3d9"
+					},
 						{
 							"visibility": "on"
 						}
 					]
 				}
 			]
-		});
-		var marker = new google.maps.Marker({
-			position: location,
-			map: map,
-			icon: './assets/marker.svg'
-		});
+		};
+		const infoWindow = new google.maps.InfoWindow();
+
+		const addMarkers = () => {
+			const bounds = new google.maps.LatLngBounds();
+			locations.forEach((location, index) => {
+				let locationLatLng = new google.maps.LatLng(location.lat, location.lng)
+				let marker = new google.maps.Marker({
+					title: location.name,
+					position: locationLatLng,
+					map: map,
+					icon: './assets/marker.svg'
+				});
+				bounds.extend(marker.position);
+				markers.push(marker);
+				showInfoMarkerOnMap(marker, index);
+			});
+
+			map.fitBounds(bounds);
+		};
+
+		const showInfoMarkerOnMap = (marker, index) => {
+			google.maps.event.addListener(marker, 'click', function () {
+				infoWindow.setContent(`
+					<h3>${locations[index].name}</h3>
+					<p>${locations[index].address}</p>
+					<p>${locations[index].phone}</p>
+				`);
+				itemClicked = index;
+				infoWindow.open(map, marker);
+				map.panTo(marker.getPosition());
+				map.setZoom(12);
+			})
+		};
+
+		const getLocationList = () => {
+			if (dealerLocatorList) {
+				dealerLocatorList.innerHTML = '';
+				markers.forEach((marker, index) => {
+					if (map.getBounds().contains(marker.getPosition())) {
+						const newMarker = document.createElement('div');
+						newMarker.classList.add('dealer-locator-item');
+						newMarker.innerHTML = `
+						<h3>${locations[index].name}</h3>
+						<p>${locations[index].address}</p>
+						<p>${locations[index].phone}</p>
+					`;
+						newMarker.setAttribute('marker-id', `${index}`);
+						newMarker.addEventListener('click', () => {
+							itemClicked = index;
+							const markerIndex = newMarker.getAttribute('marker-id');
+							google.maps.event.trigger(markers[markerIndex], 'click');
+						});
+						dealerLocatorList.appendChild(newMarker);
+					}
+				});
+			}
+		};
+
+		const initialize = () => {
+			map = new google.maps.Map(mapSelector, mapOption);
+
+			addMarkers();
+
+			let listener = google.maps.event.addListener(map, 'idle', () => {
+				if (map.getZoom() > 12) {
+					map.setZoom(12);
+				}
+				google.maps.event.removeListener(listener);
+			});
+
+			google.maps.event.addListener(map, 'bounds_changed', getLocationList);
+		};
+
+		google.maps.event.addDomListener(window, 'load', initialize);
 	}
-}
+};

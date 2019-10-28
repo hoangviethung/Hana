@@ -5,8 +5,94 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<style>#loading{-webkit-transition:.8s;-o-transition:.8s;position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999;transition:.8s;background:#fff;width:100%;height:100%}#loading #progress{-webkit-transition:.8s;-o-transition:.8s;display:none;transition:.8s;background:#000;width:0;height:1px}#loading #progress,#loading .progstat-wrapper{-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);position:absolute;top:50%;transform:translateY(-50%)}#loading .progstat-wrapper{margin-top:0;width:100%;color:#000;font-size:14px;font-weight:300;letter-spacing:3px;text-align:center}#loading .logo-loader{-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:-100px;width:150px;height:150px}</style>
-		<script>!function(){function n(n){return document.getElementById(n)}document.addEventListener("DOMContentLoaded",function(){var e=n("loading"),t=n("progress"),o=n("progstat"),r=document.images,i=0,d=r.length;if(0==d)return u();function a(){var n=100/d*(i+=1)<<0;if(t.style.width=n,o.innerHTML=n,i===d)return u()}function u(){e.style.opacity=0,setTimeout(function(){e.style.display="none";var n=document.getElementById("loading");n.parentNode.removeChild(n)},1500)}for(var c=0;c<d;c++){var s=new Image;s.onload=a,s.onerror=a,s.src=r[c].src}},!1)}();</script>
+		<meta name="google-signin-client_id" content="453714535618-b9cq9curc3k2q6f84mktbpu5c3056pfi.apps.googleusercontent.com">
+		<style>
+			#loading {
+				-webkit-transition: .8s;
+				-o-transition: .8s;
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 99999;
+				transition: .8s;
+				background: #fff;
+				width: 100%;
+				height: 100%
+			}
+			
+			#loading #progress {
+				-webkit-transition: .8s;
+				-o-transition: .8s;
+				display: none;
+				transition: .8s;
+				background: #000;
+				width: 0;
+				height: 1px
+			}
+			
+			#loading #progress, #loading .progstat-wrapper {
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%)
+			}
+			
+			#loading .progstat-wrapper {
+				margin-top: 0;
+				width: 100%;
+				color: #000;
+				font-size: 14px;
+				font-weight: 300;
+				letter-spacing: 3px;
+				text-align: center
+			}
+			
+			#loading .logo-loader {
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				margin-top: -100px;
+				width: 150px;
+				height: 150px
+			}
+		</style>
+		<script>
+			!function () {
+				function n(n) {
+					return document.getElementById(n)
+				}
+			
+				document.addEventListener("DOMContentLoaded", function () {
+					var e = n("loading"), t = n("progress"), o = n("progstat"), r = document.images, i = 0,
+						d = r.length;
+					if (0 == d) return u();
+			
+					function a() {
+						var n = 100 / d * (i += 1) << 0;
+						if (t.style.width = n, o.innerHTML = n, i === d) return u()
+					}
+			
+					function u() {
+						e.style.opacity = 0, setTimeout(function () {
+							e.style.display = "none";
+							var n = document.getElementById("loading");
+							n.parentNode.removeChild(n)
+						}, 1500)
+					}
+			
+					for (var c = 0; c < d; c++) {
+						var s = new Image;
+						s.onload = a, s.onerror = a, s.src = r[c].src
+					}
+				}, !1)
+			}();
+		</script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&amp;display=swap&amp;subset=vietnamese">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;display=swap&amp;subset=vietnamese">
 		<link rel="stylesheet" href="./css/core.min.css">
@@ -160,7 +246,11 @@
 							</div>
 							<div class="form-seperate"><span>Hoặc</span></div>
 							<div class="form-social">
-								<div class="icon google"><img src="./assets/icons/google.svg"></div>
+								<div class="icon google">
+									<div id="gSignInWrapper">
+										<div class="customGPlusSignIn btn btn-google" id="customBtn"><img src="./assets/icons/google.svg" alt=""><span class="label">Đăng nhập với Google</span></div>
+									</div>
+								</div>
 								<div class="icon facebook"><img src="./assets/icons/facebook.svg"></div>
 							</div>
 							<div class="form-button">
@@ -334,6 +424,7 @@
 		</footer>
 		<div class="backdrop"></div>
 		<div id="go-top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.279 40.032"><g transform="translate(28.454 38.032) rotate(180)"><g transform="translate(0 0)"><line y2="34.32" transform="translate(12.742)" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></line><path d="M0,0,12.542,11.415,25.632,0" transform="translate(0 23.938)" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></path></g><g transform="translate(0 23.938)"><path d="M0,0,12.542,11.415,25.632,0" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></path></g></g></svg></div>
+		<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
 	</body>

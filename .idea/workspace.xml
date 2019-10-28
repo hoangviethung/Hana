@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a825fdf8-df9b-4825-9286-578f3d6bbedf" name="Default Changelist" comment="" />
+    <list default="true" id="a825fdf8-df9b-4825-9286-578f3d6bbedf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/gg-authenticate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tasks/copy.js" beforeDir="false" afterPath="$PROJECT_DIR$/.tasks/copy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tasks/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/.tasks/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/assets/collection/c_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/assets/collection/c_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/css/main.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/css/main.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/css/main.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/doimatkhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/doimatkhau.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/donhang.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/donhang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/giohang.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/giohang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/js/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/js/main.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/js/main.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/js/main.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/lienhe.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/lienhe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/sale.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/sale.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/sanpham-ct.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/sanpham-ct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/sanpham.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/sanpham.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/sukien-ct.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/sukien-ct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/sukien.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/sukien.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/thanhcong.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/thanhcong.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/thongtin.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/thongtin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/tintuc-ct.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/tintuc-ct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dist/tintuc.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/tintuc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_components/_layout/_header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/_components/_layout/_header.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_components/_layout/_layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/_components/_layout/_layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_components/index/i-2.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/_components/index/i-2.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/collection/c_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/collection/c_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/pages/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/pages/product.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lienhe.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/lienhe.pug" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +49,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SclnKuTZKG7uUZEOWGtp7S9EeP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -54,6 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571870930666</updated>
       <workItem from="1571870932788" duration="111000" />
+      <workItem from="1572248563828" duration="7744000" />
     </task>
     <servers />
   </component>
@@ -65,7 +104,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

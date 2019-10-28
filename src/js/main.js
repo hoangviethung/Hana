@@ -1,7 +1,6 @@
 // Define function, variables
-import {
-	initMap
-} from "./map";
+import GGMAP from "./map";
+import gLogin from './gg-authenticate';
 
 const homeBanner = () => {
 	return new Swiper('.home-banner .swiper-container', {
@@ -122,7 +121,7 @@ const checkIndexPage = () => {
 
 const saleMasonry = () => {
 	if (document.getElementById('sale-masonry')) {
-		$('#sale-masonry').imagesLoaded().done(function(instance) {
+		$('#sale-masonry').imagesLoaded().done(function (instance) {
 			return new Masonry('#sale-masonry', {
 				itemSelector: '.grid-item',
 				fitWidth: true,
@@ -145,7 +144,7 @@ const productDetailSlider = () => {
 		_thisHeightRatio = Number(width / height);
 	}
 
-	const setHeight = function(ratio) {
+	const setHeight = function (ratio) {
 		if (window.innerWidth >= 1025) {
 			const height = document.querySelector('.product-detail-slider .big-image').clientWidth / ratio;
 			document.querySelector('.product-detail-slider .small-image').style.height = height + 'px';
@@ -169,7 +168,7 @@ const productDetailSlider = () => {
 			}
 		},
 		on: {
-			init: function() {
+			init: function () {
 				if (window.innerWidth < 1025) {
 					Array.from(document.querySelectorAll('.product-detail-slider .small-image .swiper-slide')).forEach(item => {
 						item.style.height = item.style.width;
@@ -177,7 +176,7 @@ const productDetailSlider = () => {
 				}
 				document.querySelector('.product-detail-slider .small-image .swiper-slide').classList.add('swiper-slide-thumb-active');
 			},
-			resize: function() {
+			resize: function () {
 				if (window.innerWidth < 1025) {
 					Array.from(document.querySelectorAll('.product-detail-slider .small-image .swiper-slide')).forEach(item => {
 						item.style.height = item.style.width;
@@ -197,7 +196,7 @@ const productDetailSlider = () => {
 			swiper: smallimageSlider,
 		},
 		on: {
-			init: function() {
+			init: function () {
 				getHeightRatio(_thisHeightRatio);
 				setHeight(_thisHeightRatio);
 				smallimageSlider.init();
@@ -207,7 +206,7 @@ const productDetailSlider = () => {
 					})
 				}
 			},
-			resize: function() {
+			resize: function () {
 				setHeight(_thisHeightRatio);
 				smallimageSlider.update();
 				if (window.innerWidth < 1025) {
@@ -270,7 +269,7 @@ const Header = () => {
 	const loginToggle = document.querySelector('.header-items .item.login .icon');
 	const html = document.querySelector('html');
 
-	buttonMenuToggle.addEventListener('click', function() {
+	buttonMenuToggle.addEventListener('click', function () {
 		this.querySelector('.hamburger-1').classList.toggle('active')
 		if (this.querySelector('.hamburger-1').classList.contains('active')) {
 			headerNav.classList.add('mobile-active');
@@ -288,18 +287,18 @@ const Header = () => {
 	})
 
 	navItemButton.forEach(navItem => {
-		navItem.addEventListener('click', function() {
+		navItem.addEventListener('click', function () {
 			this.parentNode.querySelector('.nav-sub').classList.add('mobile-active');
 		})
 	})
 
 	navItemClose.forEach(navItem => {
-		navItem.addEventListener('click', function() {
+		navItem.addEventListener('click', function () {
 			this.parentNode.classList.remove('mobile-active');
 		})
 	})
 
-	searchToggle.addEventListener('click', function() {
+	searchToggle.addEventListener('click', function () {
 		this.parentNode.querySelector('.search-form').classList.toggle('mobile-active');
 		headerNav.classList.remove('mobile-active');
 		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active')
@@ -307,7 +306,7 @@ const Header = () => {
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
 
-	cartToggle.addEventListener('click', function() {
+	cartToggle.addEventListener('click', function () {
 		cartToggle.parentNode.querySelector('.cart-panel').classList.toggle('open');
 		headerNav.classList.remove('mobile-active');
 		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active');
@@ -315,7 +314,7 @@ const Header = () => {
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
 
-	loginToggle.addEventListener('click', function() {
+	loginToggle.addEventListener('click', function () {
 		loginToggle.parentNode.querySelector('.login-panel').classList.toggle('open');
 		headerNav.classList.remove('mobile-active');
 		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
@@ -355,7 +354,7 @@ const filterPriceSlider = () => {
 				min: minPrice,
 				range: true,
 				step: 5000,
-				slide: function(event, ui) {
+				slide: function (event, ui) {
 					document.getElementById('price-max').textContent = ui.values[1].toLocaleString() + '₫';
 					document.getElementById('price-min').textContent = ui.values[0].toLocaleString() + '₫';
 				}
@@ -405,7 +404,7 @@ const toggleFilterMobile = () => {
 
 		filterCloseBtn.addEventListener('click', removeActive);
 	}
-}
+};
 
 const configFancybox = () => {
 	$('[data-fancybox]').fancybox({
@@ -421,17 +420,18 @@ const moveCartBack = () => {
 	if (cartBack && window.innerWidth < 768) {
 		cartCheckout.parentNode.appendChild(cartBack, cartCheckout);
 	}
-}
+};
 
 // Call functions here
 document.addEventListener("DOMContentLoaded", () => {
-	initMap();
 	objectFitImages('.ofc');
+	gLogin();
 	fixedHeaderActive();
 	toggleGoTopButton();
 	goTop();
 	checkIndexPage();
 	Header();
+	GGMAP();
 	// ----------
 	configFancybox();
 	homeBanner();
