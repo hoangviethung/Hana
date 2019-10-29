@@ -1,10 +1,10 @@
 header {
 	background: #FCE4EC;
 
-	>.container {
+	> .container {
 		height: 100%;
 
-		>.row {
+		> .row {
 			height: 100%;
 			align-items: center;
 			position: relative;
@@ -45,8 +45,7 @@ header {
 				width: 100%;
 				bottom: 0;
 				height: 2px;
-				background: map-get($mau, den);
-				;
+				background: map-get($mau, den);;
 				left: 0;
 				transform: translateX(15px);
 			}
@@ -76,7 +75,7 @@ header {
 				height: 100%;
 				position: relative;
 
-				+.nav-item {
+				+ .nav-item {
 					margin-left: 100px;
 
 					@media (max-width: 1659.98px) {
@@ -145,7 +144,7 @@ header {
 		.item {
 			cursor: pointer;
 
-			+.item {
+			+ .item {
 				margin-left: 50px;
 			}
 
@@ -206,7 +205,7 @@ header {
 				border-bottom: 17px solid white;
 				position: absolute;
 				bottom: 100%;
-				right: 95px;
+				right: 90px;
 				z-index: 2;
 			}
 
@@ -217,7 +216,7 @@ header {
 				border-bottom: 19px solid rgba(#707070, .35);
 				position: absolute;
 				bottom: 100%;
-				right: 94px;
+				right: 89px;
 				z-index: 2;
 			}
 
@@ -253,6 +252,34 @@ header {
 				margin-bottom: 10px;
 			}
 
+			.account-info {
+				display: flex;
+				align-items: center;
+				width: 250px;
+
+				.img {
+					flex: 0 0 60px;
+					width: 60px;
+					height: 60px;
+					overflow: hidden;
+					border-radius: 50%;
+					background: darken(white, 15%);
+				}
+
+				.info {
+					padding-left: 10px;
+					flex-basis: 0;
+					flex-grow: 1;
+					max-width: 100%;
+
+					h3 {
+						font-weight: 700;
+						font-size: 16px;
+						color: #1c1c1c;
+					}
+				}
+			}
+
 			@media (min-width: 1025px) {
 				&:after {
 					content: '';
@@ -261,7 +288,7 @@ header {
 					border-bottom: 17px solid white;
 					position: absolute;
 					bottom: 100%;
-					right: 170px;
+					right: 160px;
 					z-index: 2;
 				}
 
@@ -272,7 +299,7 @@ header {
 					border-bottom: 19px solid rgba(#707070, .35);
 					position: absolute;
 					bottom: 100%;
-					right: 169px;
+					right: 159px;
 					z-index: 2;
 				}
 			}
@@ -500,7 +527,7 @@ header {
 				justify-content: center;
 				display: flex;
 
-				>.icon {
+				> .icon {
 					height: 100%;
 					width: 100%;
 					display: flex;
@@ -508,12 +535,12 @@ header {
 					align-items: center;
 				}
 
-				>.icon>svg {
+				> .icon > svg {
 					width: 100%;
 					max-width: 20px;
 				}
 
-				+.item {
+				+ .item {
 					margin-left: 0;
 					border-left: 1px solid darken(white, 15%);
 				}
@@ -621,7 +648,7 @@ header {
 			input[type='checkbox'] {
 				display: none;
 
-				&:checked~label:before {
+				&:checked ~ label:before {
 					content: '\f12c';
 					font-family: 'Material Design Icons';
 					font-size: 12px;

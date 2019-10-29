@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a825fdf8-df9b-4825-9286-578f3d6bbedf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/gg-authenticate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Hana.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Hana.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.tasks/copy.js" beforeDir="false" afterPath="$PROJECT_DIR$/.tasks/copy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.tasks/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/.tasks/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_dist/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_dist/assets/collection/c_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/assets/collection/c_1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_dist/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/css/main.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_dist/css/main.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/css/main.min.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_dist/doimatkhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/doimatkhau.html" afterDir="false" />
@@ -29,12 +25,9 @@
       <change beforePath="$PROJECT_DIR$/_dist/tintuc.html" beforeDir="false" afterPath="$PROJECT_DIR$/_dist/tintuc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_components/_layout/_header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/_components/_layout/_header.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_components/_layout/_layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/_components/_layout/_layout.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_components/index/i-2.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/_components/index/i-2.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/collection/c_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/collection/c_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/pages/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/pages/product.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/globals/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/globals/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/gg-authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/gg-authenticate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lienhe.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/lienhe.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +85,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571870930666</updated>
       <workItem from="1571870932788" duration="111000" />
-      <workItem from="1572248563828" duration="7744000" />
+      <workItem from="1572248563828" duration="9671000" />
+      <workItem from="1572315162998" duration="2692000" />
     </task>
     <servers />
   </component>
