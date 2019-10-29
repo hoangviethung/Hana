@@ -133,16 +133,18 @@ html(lang="en")
 		script.
 			var accountUrl = 'thongtin.html'
 			var googleUser = {};
-			var loginBtn = document.getElementById('customBtn');
+			var loginBtn = Array.from(document.querySelectorAll('.customBtn'));
 			var startApp = function () {
-				gapi.load('auth2', function () {
-					// Retrieve the singleton for the GoogleAuth library and set up the client.
-					auth2 = gapi.auth2.init({
-						client_id: '453714535618-b9cq9curc3k2q6f84mktbpu5c3056pfi.apps.googleusercontent.com',
-						cookiepolicy: 'single_host_origin',
+				loginBtn.forEach(function (btn) {
+					gapi.load('auth2', function () {
+						// Retrieve the singleton for the GoogleAuth library and set up the client.
+						auth2 = gapi.auth2.init({
+							client_id: '453714535618-b9cq9curc3k2q6f84mktbpu5c3056pfi.apps.googleusercontent.com',
+							cookiepolicy: 'single_host_origin',
+						});
+						attachSignin(btn);
 					});
-					attachSignin(loginBtn);
-				});
+				})
 			};
 			var attachSignin = function (element) {
 				auth2.attachClickHandler(element, {},

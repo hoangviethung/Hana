@@ -247,8 +247,8 @@
 							<div class="form-seperate"><span>Hoặc</span></div>
 							<div class="form-social">
 								<div class="icon google">
-									<div id="gSignInWrapper">
-										<div class="customGPlusSignIn btn btn-google" id="customBtn"><img src="./assets/icons/google.svg" alt=""></div>
+									<div class="gSignInWrapper">
+										<div class="customGPlusSignIn btn btn-google customBtn"><img src="./assets/icons/google.svg" alt=""></div>
 									</div>
 								</div>
 								<div class="icon facebook"><img src="./assets/icons/facebook.svg"></div>
@@ -280,7 +280,11 @@
 							</div>
 							<div class="form-seperate"><span>Hoặc</span></div>
 							<div class="form-social">
-								<div class="icon google"><img src="./assets/icons/google.svg"></div>
+								<div class="icon google">
+									<div class="gSignInWrapper">
+										<div class="customGPlusSignIn btn btn-google customBtn"><img src="./assets/icons/google.svg" alt=""></div>
+									</div>
+								</div>
 								<div class="icon facebook"><img src="./assets/icons/facebook.svg"></div>
 							</div>
 							<div class="form-button">
@@ -509,16 +513,18 @@
 		<script>
 			var accountUrl = 'thongtin.html'
 			var googleUser = {};
-			var loginBtn = document.getElementById('customBtn');
+			var loginBtn = Array.from(document.querySelectorAll('.customBtn'));
 			var startApp = function () {
-				gapi.load('auth2', function () {
-					// Retrieve the singleton for the GoogleAuth library and set up the client.
-					auth2 = gapi.auth2.init({
-						client_id: '453714535618-b9cq9curc3k2q6f84mktbpu5c3056pfi.apps.googleusercontent.com',
-						cookiepolicy: 'single_host_origin',
+				loginBtn.forEach(function (btn) {
+					gapi.load('auth2', function () {
+						// Retrieve the singleton for the GoogleAuth library and set up the client.
+						auth2 = gapi.auth2.init({
+							client_id: '453714535618-b9cq9curc3k2q6f84mktbpu5c3056pfi.apps.googleusercontent.com',
+							cookiepolicy: 'single_host_origin',
+						});
+						attachSignin(btn);
 					});
-					attachSignin(loginBtn);
-				});
+				})
 			};
 			var attachSignin = function (element) {
 				auth2.attachClickHandler(element, {},
