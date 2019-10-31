@@ -1,5 +1,6 @@
 // Define function, variables
-import GGMAP from "./map";
+import GGMAP from './map';
+import Mapping from '../../vendors/mapping';
 
 const homeBanner = () => {
 	return new Swiper('.home-banner .swiper-container', {
@@ -37,7 +38,7 @@ const productSlider = () => {
 			},
 			768: {
 				slidesPerView: 1,
-			}
+			},
 		},
 		pagination: {
 			el: '.index-1 .home-product-slider .swiper-container .swiper-pagination',
@@ -131,9 +132,9 @@ const saleMasonry = () => {
 }
 
 const productDetailSlider = () => {
-
+	
 	let _thisHeightRatio;
-
+	
 	const getHeightRatio = (heightRatio) => {
 		const width = Number(document.querySelector('.product-detail-slider .big-image').clientWidth);
 		const height = Number(document.querySelector('.product-detail-slider .big-image').clientHeight);
@@ -142,14 +143,14 @@ const productDetailSlider = () => {
 		}
 		_thisHeightRatio = Number(width / height);
 	}
-
+	
 	const setHeight = function (ratio) {
 		if (window.innerWidth >= 1025) {
 			const height = document.querySelector('.product-detail-slider .big-image').clientWidth / ratio;
 			document.querySelector('.product-detail-slider .small-image').style.height = height + 'px';
 		}
 	}
-
+	
 	const smallimageSlider = new Swiper('.product-detail-slider .small-image .swiper-container', {
 		init: false,
 		slidesPerView: 4,
@@ -163,8 +164,8 @@ const productDetailSlider = () => {
 		speed: 900,
 		breakpoints: {
 			1025: {
-				direction: "horizontal",
-			}
+				direction: 'horizontal',
+			},
 		},
 		on: {
 			init: function () {
@@ -181,10 +182,10 @@ const productDetailSlider = () => {
 						item.style.height = item.style.width;
 					})
 				}
-			}
-		}
+			},
+		},
 	})
-
+	
 	const bigImagesSlider = new Swiper('.product-detail-slider .big-image .swiper-container', {
 		slidesPerView: 1,
 		watchSlidesVisibility: true,
@@ -213,8 +214,8 @@ const productDetailSlider = () => {
 						item.style.height = item.style.width;
 					})
 				}
-			}
-		}
+			},
+		},
 	})
 }
 
@@ -241,7 +242,7 @@ const productRelatedSlider = () => {
 		spaceBetween: 80,
 		navigation: {
 			prevEl: '.product .product-related .swiper-prev',
-			nextEl: '.product .product-related .swiper-next'
+			nextEl: '.product .product-related .swiper-next',
 		},
 		breakpoints: {
 			1200: {
@@ -253,8 +254,8 @@ const productRelatedSlider = () => {
 			768: {
 				slidesPerView: 2,
 				spaceBetween: 10,
-			}
-		}
+			},
+		},
 	})
 }
 
@@ -267,7 +268,7 @@ const Header = () => {
 	const cartToggle = document.querySelector('.header-items .item.cart .icon');
 	const loginToggle = document.querySelector('.header-items .item.login .icon');
 	const html = document.querySelector('html');
-
+	
 	buttonMenuToggle.addEventListener('click', function () {
 		this.querySelector('.hamburger-1').classList.toggle('active')
 		if (this.querySelector('.hamburger-1').classList.contains('active')) {
@@ -284,19 +285,19 @@ const Header = () => {
 		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
-
+	
 	navItemButton.forEach(navItem => {
 		navItem.addEventListener('click', function () {
 			this.parentNode.querySelector('.nav-sub').classList.add('mobile-active');
 		})
 	})
-
+	
 	navItemClose.forEach(navItem => {
 		navItem.addEventListener('click', function () {
 			this.parentNode.classList.remove('mobile-active');
 		})
 	})
-
+	
 	searchToggle.addEventListener('click', function () {
 		this.parentNode.querySelector('.search-form').classList.toggle('mobile-active');
 		headerNav.classList.remove('mobile-active');
@@ -304,7 +305,7 @@ const Header = () => {
 		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
-
+	
 	cartToggle.addEventListener('click', function () {
 		cartToggle.parentNode.querySelector('.cart-panel').classList.toggle('open');
 		headerNav.classList.remove('mobile-active');
@@ -312,7 +313,7 @@ const Header = () => {
 		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
-
+	
 	loginToggle.addEventListener('click', function () {
 		loginToggle.parentNode.querySelector('.login-panel').classList.toggle('open');
 		headerNav.classList.remove('mobile-active');
@@ -320,7 +321,7 @@ const Header = () => {
 		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active');
 		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
 	})
-
+	
 	const bp = window.matchMedia('(max-width: 1024px)');
 	const homePageLink = document.querySelector('.nav-item.home-page');
 	const firstItem = document.querySelector('.nav-item.first-item');
@@ -347,7 +348,7 @@ const filterPriceSlider = () => {
 			const maxPrice = Number(document.getElementById('price-slider').getAttribute('data-max'));
 			document.getElementById('price-max').textContent = defaultValue[1].toLocaleString() + '₫';
 			document.getElementById('price-min').textContent = defaultValue[0].toLocaleString() + '₫';
-			$("#price-slider").slider({
+			$('#price-slider').slider({
 				values: defaultValue,
 				max: maxPrice,
 				min: minPrice,
@@ -356,7 +357,7 @@ const filterPriceSlider = () => {
 				slide: function (event, ui) {
 					document.getElementById('price-max').textContent = ui.values[1].toLocaleString() + '₫';
 					document.getElementById('price-min').textContent = ui.values[0].toLocaleString() + '₫';
-				}
+				},
 			});
 		}
 	}
@@ -369,7 +370,7 @@ const toggleFilterMobile = () => {
 		const filterCloseBtn = document.querySelector('.filter-close-btn')
 		const headerItems = document.querySelector('.header-items');
 		const html = document.querySelector('html');
-
+		
 		const preventScroll = () => {
 			html.classList.add('ofh')
 		}
@@ -382,7 +383,7 @@ const toggleFilterMobile = () => {
 			headerItems.classList.remove('filter-active');
 			disablePreventScroll();
 		}
-
+		
 		window.addEventListener('scroll', () => {
 			let filterTogglePosition = filterToggle.parentNode.offsetTop;
 			if (window.scrollY >= filterTogglePosition) {
@@ -391,7 +392,7 @@ const toggleFilterMobile = () => {
 				filterToggle.classList.remove('mobile-fixed');
 			}
 		})
-
+		
 		filterToggle.addEventListener('click', () => {
 			colFilter.classList.toggle('mobile-active');
 			if (colFilter.classList.contains('mobile-active')) {
@@ -400,7 +401,7 @@ const toggleFilterMobile = () => {
 				preventScroll();
 			}
 		})
-
+		
 		filterCloseBtn.addEventListener('click', removeActive);
 	}
 };
@@ -408,21 +409,40 @@ const toggleFilterMobile = () => {
 const configFancybox = () => {
 	$('[data-fancybox]').fancybox({
 		hash: false,
-		closeExisting: true
+		closeExisting: true,
 	})
 }
 
 const moveCartBack = () => {
 	const cartBack = document.querySelector('.cart-back');
-	const cartCheckout = document.querySelector('.cart-checkout');
-	const bp = window.matchMedia('(max-width: 767.98px)');
-	if (cartBack && window.innerWidth < 768) {
-		cartCheckout.parentNode.appendChild(cartBack, cartCheckout);
+	if (cartBack) {
+		return new Mapping('.cart-back', {
+			mobileNode: '.cart-checkout',
+			mobileMethod: 'appendTo',
+			desktopMethod: 'insertAfter',
+			desktopNode: '.cart-table',
+			breakpoint: 1200,
+		})
+	}
+};
+
+const productDetailQuantity = () => {
+	const quantityWrapper = document.querySelector('.product .detail .quantity');
+	if (quantityWrapper) {
+		const decreaseBtn = quantityWrapper.querySelector('#decrease');
+		const increaseBtn = quantityWrapper.querySelector('#increase');
+		const quantity = quantityWrapper.querySelector('#quantity');
+		decreaseBtn.addEventListener('click', () => {
+			quantity.value = Number(quantity.value) - 1 < 0 ? 0 : Number(quantity.value) - 1;
+		});
+		increaseBtn.addEventListener('click', () => {
+			quantity.value = Number(quantity.value) + 1;
+		})
 	}
 };
 
 // Call functions here
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
 	objectFitImages('.ofc');
 	fixedHeaderActive();
 	toggleGoTopButton();
@@ -442,6 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	filterPriceSlider();
 	toggleFilterMobile();
 	moveCartBack();
+	productDetailQuantity();
 	AOS.init({
 		offset: 150, // offset (in px) from the original trigger point
 		delay: 250, // values from 0 to 3000, with step 50ms

@@ -21,7 +21,6 @@
 			"bower_components/imagesloaded/imagesloaded.pkgd.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
 			"vendors/mapping.js",
-			"vendors/mapping-listener.js",
 			"bower_components/aos/dist/aos.js"
 		],
 		"css": [
