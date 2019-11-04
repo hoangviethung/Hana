@@ -1,14 +1,15 @@
-module.exports = () => {
+const GGMapInit = () => {
 	const mapSelector = document.querySelector('#map');
 	const dealerLocatorList = document.querySelector('.dealer-locator-list .list');
+	let bounds = new google.maps.LatLngBounds();
 
 	if (mapSelector) {
-		let map, markers = [], itemClicked;
-		const locations = locationsInput;
+		let map, markers = [],
+			itemClicked;
+		let locations = locationsInput;
 		const mapOption = {
 			zoom: 12,
-			styles: [
-				{
+			styles: [{
 					"featureType": "administrative",
 					"elementType": "labels.text.fill",
 					"stylers": [{
@@ -40,8 +41,8 @@ module.exports = () => {
 					"featureType": "road",
 					"elementType": "all",
 					"stylers": [{
-						"saturation": -100
-					},
+							"saturation": -100
+						},
 						{
 							"lightness": 45
 						}
@@ -72,8 +73,8 @@ module.exports = () => {
 					"featureType": "water",
 					"elementType": "all",
 					"stylers": [{
-						"color": "#e6d3d9"
-					},
+							"color": "#e6d3d9"
+						},
 						{
 							"visibility": "on"
 						}
@@ -84,7 +85,6 @@ module.exports = () => {
 		const infoWindow = new google.maps.InfoWindow();
 
 		const addMarkers = () => {
-			const bounds = new google.maps.LatLngBounds();
 			locations.forEach((location, index) => {
 				let locationLatLng = new google.maps.LatLng(location.lat, location.lng)
 				let marker = new google.maps.Marker({
@@ -93,16 +93,16 @@ module.exports = () => {
 					map: map,
 					icon: './assets/marker.svg'
 				});
-				bounds.extend(marker.position);
 				markers.push(marker);
 				showInfoMarkerOnMap(marker, index);
+				bounds.extend(marker.position);
 			});
 
 			map.fitBounds(bounds);
 		};
 
 		const showInfoMarkerOnMap = (marker, index) => {
-			google.maps.event.addListener(marker, 'click', function () {
+			google.maps.event.addListener(marker, 'click', function() {
 				infoWindow.setContent(`
 					<h3>${locations[index].name}</h3>
 					<p>${locations[index].address}</p>
@@ -141,19 +141,18 @@ module.exports = () => {
 
 		const initialize = () => {
 			map = new google.maps.Map(mapSelector, mapOption);
-
 			addMarkers();
-
 			let listener = google.maps.event.addListener(map, 'idle', () => {
 				if (map.getZoom() > 12) {
 					map.setZoom(12);
 				}
 				google.maps.event.removeListener(listener);
 			});
-
 			google.maps.event.addListener(map, 'bounds_changed', getLocationList);
 		};
-
+		
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
 };
+
+export default GGMapInit;

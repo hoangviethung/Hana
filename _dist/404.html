@@ -423,7 +423,8 @@
 		</footer>
 		<div class="backdrop"></div>
 		<div id="go-top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.279 40.032"><g transform="translate(28.454 38.032) rotate(180)"><g transform="translate(0 0)"><line y2="34.32" transform="translate(12.742)" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></line><path d="M0,0,12.542,11.415,25.632,0" transform="translate(0 23.938)" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></path></g><g transform="translate(0 23.938)"><path d="M0,0,12.542,11.415,25.632,0" fill="none" stroke="#d51635" stroke-linecap="round" stroke-width="4"></path></g></g></svg></div>
-		<script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;key=AIzaSyA2Q3yGZS8Dl0lpaoNEZLy8Q7zTnvZRMYI&amp;libraries=places"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/platform.js" async defer></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
 		<script>
@@ -433,7 +434,6 @@
 			var startApp = function () {
 				loginBtn.forEach(function (btn) {
 					gapi.load('auth2', function () {
-						// Retrieve the singleton for the GoogleAuth library and set up the client.
 						auth2 = gapi.auth2.init({
 							client_id: '453714535618-b9cq9curc3k2q6f84mktbpu5c3056pfi.apps.googleusercontent.com',
 							cookiepolicy: 'single_host_origin',
@@ -445,14 +445,6 @@
 			var attachSignin = function (element) {
 				auth2.attachClickHandler(element, {},
 					function (googleUser) {
-						var htmlLogined = "<a href='" + accountUrl + "' class=\"account-info\">" +
-							"<div class='img'><img src='" + googleUser.w3.Paa + "' alt=''></div>" +
-							"<div class='info'>" +
-							"<h3>" + googleUser.w3.ig + "</h3>" +
-							"</div>" +
-							"</a>";
-						document.querySelector('.login-panel').innerHTML = htmlLogined;
-						document.querySelector('.login-panel').classList.remove('open');
 						$.fancybox.close();
 					},
 					function (error) {

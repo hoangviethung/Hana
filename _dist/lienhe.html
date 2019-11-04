@@ -477,12 +477,13 @@
 					lat: 10.800151,
 					lng: 106.698085,
 					name: 'Hana',
-					address: '29A Nguyễn Thái Học, Phường 1, Quận Bình Thạnh, Tp. HCM'
+					address: '29A Nguyễn Thái Học, Phường 1, Quận Bình Thạnh, Tp. HCM',
+					phone: 0987654321
 				}
 			]
 		</script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
-		<script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;key=AIzaSyA2Q3yGZS8Dl0lpaoNEZLy8Q7zTnvZRMYI&amp;libraries=places"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/platform.js" async defer></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
 		<script>
@@ -492,7 +493,6 @@
 			var startApp = function () {
 				loginBtn.forEach(function (btn) {
 					gapi.load('auth2', function () {
-						// Retrieve the singleton for the GoogleAuth library and set up the client.
 						auth2 = gapi.auth2.init({
 							client_id: '453714535618-b9cq9curc3k2q6f84mktbpu5c3056pfi.apps.googleusercontent.com',
 							cookiepolicy: 'single_host_origin',
@@ -504,14 +504,6 @@
 			var attachSignin = function (element) {
 				auth2.attachClickHandler(element, {},
 					function (googleUser) {
-						var htmlLogined = "<a href='" + accountUrl + "' class=\"account-info\">" +
-							"<div class='img'><img src='" + googleUser.w3.Paa + "' alt=''></div>" +
-							"<div class='info'>" +
-							"<h3>" + googleUser.w3.ig + "</h3>" +
-							"</div>" +
-							"</a>";
-						document.querySelector('.login-panel').innerHTML = htmlLogined;
-						document.querySelector('.login-panel').classList.remove('open');
 						$.fancybox.close();
 					},
 					function (error) {

@@ -20,7 +20,6 @@
 			"bower_components/masonry-layout/dist/masonry.pkgd.js",
 			"bower_components/imagesloaded/imagesloaded.pkgd.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
-			"vendors/mapping.js",
 			"bower_components/aos/dist/aos.js"
 		],
 		"css": [

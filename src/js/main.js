@@ -1,5 +1,5 @@
 // Define function, variables
-import GGMAP from './map';
+import GGMapInit from './map';
 import Mapping from '../../vendors/mapping';
 
 const homeBanner = () => {
@@ -443,6 +443,7 @@ const productDetailQuantity = () => {
 
 // Call functions here
 document.addEventListener('DOMContentLoaded', () => {
+	GGMapInit();
 	objectFitImages('.ofc');
 	fixedHeaderActive();
 	toggleGoTopButton();
