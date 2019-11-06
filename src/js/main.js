@@ -121,7 +121,7 @@ const checkIndexPage = () => {
 
 const saleMasonry = () => {
 	if (document.getElementById('sale-masonry')) {
-		$('#sale-masonry').imagesLoaded().done(function (instance) {
+		$('#sale-masonry').imagesLoaded().done(function(instance) {
 			return new Masonry('#sale-masonry', {
 				itemSelector: '.grid-item',
 				fitWidth: true,
@@ -132,9 +132,9 @@ const saleMasonry = () => {
 }
 
 const productDetailSlider = () => {
-	
+
 	let _thisHeightRatio;
-	
+
 	const getHeightRatio = (heightRatio) => {
 		const width = Number(document.querySelector('.product-detail-slider .big-image').clientWidth);
 		const height = Number(document.querySelector('.product-detail-slider .big-image').clientHeight);
@@ -143,14 +143,14 @@ const productDetailSlider = () => {
 		}
 		_thisHeightRatio = Number(width / height);
 	}
-	
-	const setHeight = function (ratio) {
+
+	const setHeight = function(ratio) {
 		if (window.innerWidth >= 1025) {
 			const height = document.querySelector('.product-detail-slider .big-image').clientWidth / ratio;
 			document.querySelector('.product-detail-slider .small-image').style.height = height + 'px';
 		}
 	}
-	
+
 	const smallimageSlider = new Swiper('.product-detail-slider .small-image .swiper-container', {
 		init: false,
 		slidesPerView: 4,
@@ -168,7 +168,7 @@ const productDetailSlider = () => {
 			},
 		},
 		on: {
-			init: function () {
+			init: function() {
 				if (window.innerWidth < 1025) {
 					Array.from(document.querySelectorAll('.product-detail-slider .small-image .swiper-slide')).forEach(item => {
 						item.style.height = item.style.width;
@@ -176,7 +176,7 @@ const productDetailSlider = () => {
 				}
 				document.querySelector('.product-detail-slider .small-image .swiper-slide').classList.add('swiper-slide-thumb-active');
 			},
-			resize: function () {
+			resize: function() {
 				if (window.innerWidth < 1025) {
 					Array.from(document.querySelectorAll('.product-detail-slider .small-image .swiper-slide')).forEach(item => {
 						item.style.height = item.style.width;
@@ -185,7 +185,7 @@ const productDetailSlider = () => {
 			},
 		},
 	})
-	
+
 	const bigImagesSlider = new Swiper('.product-detail-slider .big-image .swiper-container', {
 		slidesPerView: 1,
 		watchSlidesVisibility: true,
@@ -196,7 +196,7 @@ const productDetailSlider = () => {
 			swiper: smallimageSlider,
 		},
 		on: {
-			init: function () {
+			init: function() {
 				getHeightRatio(_thisHeightRatio);
 				setHeight(_thisHeightRatio);
 				smallimageSlider.init();
@@ -206,7 +206,7 @@ const productDetailSlider = () => {
 					})
 				}
 			},
-			resize: function () {
+			resize: function() {
 				setHeight(_thisHeightRatio);
 				smallimageSlider.update();
 				if (window.innerWidth < 1025) {
@@ -268,8 +268,8 @@ const Header = () => {
 	const cartToggle = document.querySelector('.header-items .item.cart .icon');
 	const loginToggle = document.querySelector('.header-items .item.login .icon');
 	const html = document.querySelector('html');
-	
-	buttonMenuToggle.addEventListener('click', function () {
+
+	buttonMenuToggle.addEventListener('click', function() {
 		this.querySelector('.hamburger-1').classList.toggle('active')
 		if (this.querySelector('.hamburger-1').classList.contains('active')) {
 			headerNav.classList.add('mobile-active');
@@ -285,43 +285,43 @@ const Header = () => {
 		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
-	
+
 	navItemButton.forEach(navItem => {
-		navItem.addEventListener('click', function () {
+		navItem.addEventListener('click', function() {
 			this.parentNode.querySelector('.nav-sub').classList.add('mobile-active');
 		})
 	})
-	
+
 	navItemClose.forEach(navItem => {
-		navItem.addEventListener('click', function () {
+		navItem.addEventListener('click', function() {
 			this.parentNode.classList.remove('mobile-active');
 		})
 	})
-	
-	searchToggle.addEventListener('click', function () {
+
+	searchToggle.addEventListener('click', function() {
 		this.parentNode.querySelector('.search-form').classList.toggle('mobile-active');
 		headerNav.classList.remove('mobile-active');
 		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active')
 		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
-	
-	cartToggle.addEventListener('click', function () {
+
+	cartToggle.addEventListener('click', function() {
 		cartToggle.parentNode.querySelector('.cart-panel').classList.toggle('open');
 		headerNav.classList.remove('mobile-active');
 		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active');
 		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
 		loginToggle.parentNode.querySelector('.login-panel').classList.remove('open');
 	})
-	
-	loginToggle.addEventListener('click', function () {
+
+	loginToggle.addEventListener('click', function() {
 		loginToggle.parentNode.querySelector('.login-panel').classList.toggle('open');
 		headerNav.classList.remove('mobile-active');
 		cartToggle.parentNode.querySelector('.cart-panel').classList.remove('open');
 		buttonMenuToggle.querySelector('.hamburger-1').classList.remove('active');
 		searchToggle.parentNode.querySelector('.search-form').classList.remove('mobile-active');
 	})
-	
+
 	const bp = window.matchMedia('(max-width: 1024px)');
 	const homePageLink = document.querySelector('.nav-item.home-page');
 	const firstItem = document.querySelector('.nav-item.first-item');
@@ -354,7 +354,7 @@ const filterPriceSlider = () => {
 				min: minPrice,
 				range: true,
 				step: 5000,
-				slide: function (event, ui) {
+				slide: function(event, ui) {
 					document.getElementById('price-max').textContent = ui.values[1].toLocaleString() + '₫';
 					document.getElementById('price-min').textContent = ui.values[0].toLocaleString() + '₫';
 				},
@@ -370,7 +370,7 @@ const toggleFilterMobile = () => {
 		const filterCloseBtn = document.querySelector('.filter-close-btn')
 		const headerItems = document.querySelector('.header-items');
 		const html = document.querySelector('html');
-		
+
 		const preventScroll = () => {
 			html.classList.add('ofh')
 		}
@@ -383,7 +383,7 @@ const toggleFilterMobile = () => {
 			headerItems.classList.remove('filter-active');
 			disablePreventScroll();
 		}
-		
+
 		window.addEventListener('scroll', () => {
 			let filterTogglePosition = filterToggle.parentNode.offsetTop;
 			if (window.scrollY >= filterTogglePosition) {
@@ -392,7 +392,7 @@ const toggleFilterMobile = () => {
 				filterToggle.classList.remove('mobile-fixed');
 			}
 		})
-		
+
 		filterToggle.addEventListener('click', () => {
 			colFilter.classList.toggle('mobile-active');
 			if (colFilter.classList.contains('mobile-active')) {
@@ -401,7 +401,7 @@ const toggleFilterMobile = () => {
 				preventScroll();
 			}
 		})
-		
+
 		filterCloseBtn.addEventListener('click', removeActive);
 	}
 };
@@ -441,6 +441,27 @@ const productDetailQuantity = () => {
 	}
 };
 
+const showInformationContact = () => {
+	const contactInfo = document.getElementById('contact-info');
+
+
+	locationsInput.forEach((item, index) => {
+		const AddressItem = document.createElement('p');
+		AddressItem.innerHTML = `CN${index+1}: +<span>${item.address}</span>`;
+		contactInfo.querySelector('.info-address').append(AddressItem);
+		const PhoneItem = document.createElement('p');
+		PhoneItem.innerHTML = `<strong>${item.phone.toString()}</strong>`;
+		contactInfo.querySelector('.info-hotline').append(PhoneItem);
+		const EmailItem = document.createElement('p');
+		EmailItem.innerHTML = `Email: <a href="mailto:${item.email}">${item.email}</a>`;
+		contactInfo.querySelector('.info-email').append(EmailItem);
+		const SocialItem = document.createElement('p');
+		SocialItem.innerHTML = `Facebook: <a href="${item.social}">${item.social}</a>`;
+		contactInfo.querySelector('.info-social').append(SocialItem);
+	})
+	if (contactInfo) {}
+}
+
 // Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	GGMapInit();
@@ -464,6 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	toggleFilterMobile();
 	moveCartBack();
 	productDetailQuantity();
+	showInformationContact();
 	AOS.init({
 		offset: 150, // offset (in px) from the original trigger point
 		delay: 250, // values from 0 to 3000, with step 50ms

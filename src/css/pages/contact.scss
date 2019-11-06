@@ -1,6 +1,5 @@
 .contact {
 	.map {
-		height: 740px;
 		flex-basis: 0;
 		flex-grow: 1;
 		max-width: 100%;
@@ -24,8 +23,7 @@
 		}
 
 		&-title {
-			height: 60px;
-			max-height: 60px;
+			min-height: 60px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -50,6 +48,9 @@
 
 				i {
 					display: block;
+					a{
+						color: #707070;
+					}
 				}
 			}
 		}
@@ -57,10 +58,9 @@
 		&-address {
 			font-size: 18px;
 			display: flex;
-			padding: 25px 30px;
+			padding: 15px 30px;
 			flex-wrap: wrap;
 			border-bottom: 1px solid rgba(#FFFFFF,.5);
-			max-height: 175px;
 
 			p {
 				flex: 0 0 100%;
@@ -95,10 +95,10 @@
 		}
 
 		&-email {
-			padding: 0 30px;
-			height: 60px;
-			max-height: 60px;
+			padding: 10px 30px;
+			min-height: 60px;
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
 			border-bottom: 1px solid rgba(#FFFFFF,.5);
@@ -114,10 +114,10 @@
 		}
 
 		&-social {
-			padding: 0 30px;
-			height: 140px;
-			max-height: 140px;
+			padding: 10px 30px;
+			min-height: 140px;
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
 
