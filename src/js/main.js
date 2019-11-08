@@ -443,23 +443,25 @@ const productDetailQuantity = () => {
 
 const showInformationContact = () => {
 	const contactInfo = document.getElementById('contact-info');
+	const mapSelector = document.querySelector('#map');
 
+	if (mapSelector) {
 
-	locationsInput.forEach((item, index) => {
-		const AddressItem = document.createElement('p');
-		AddressItem.innerHTML = `CN${index+1}: +<span>${item.address}</span>`;
-		contactInfo.querySelector('.info-address').append(AddressItem);
-		const PhoneItem = document.createElement('p');
-		PhoneItem.innerHTML = `<strong>${item.phone.toString()}</strong>`;
-		contactInfo.querySelector('.info-hotline').append(PhoneItem);
-		const EmailItem = document.createElement('p');
-		EmailItem.innerHTML = `Email: <a href="mailto:${item.email}">${item.email}</a>`;
-		contactInfo.querySelector('.info-email').append(EmailItem);
-		const SocialItem = document.createElement('p');
-		SocialItem.innerHTML = `Facebook: <a href="${item.social}">${item.social}</a>`;
-		contactInfo.querySelector('.info-social').append(SocialItem);
-	})
-	if (contactInfo) {}
+		locationsInput.forEach((item, index) => {
+			const AddressItem = document.createElement('p');
+			AddressItem.innerHTML = `CN${index+1}: +<span>${item.address}</span>`;
+			contactInfo.querySelector('.info-address').append(AddressItem);
+			const PhoneItem = document.createElement('p');
+			PhoneItem.innerHTML = `<strong>${item.phone.toString()}</strong>`;
+			contactInfo.querySelector('.info-hotline').append(PhoneItem);
+			const EmailItem = document.createElement('p');
+			EmailItem.innerHTML = `Email: <a href="mailto:${item.email}">${item.email}</a>`;
+			contactInfo.querySelector('.info-email').append(EmailItem);
+			const SocialItem = document.createElement('p');
+			SocialItem.innerHTML = `Facebook: <a href="${item.social}">${item.social}</a>`;
+			contactInfo.querySelector('.info-social').append(SocialItem);
+		})
+	}
 }
 
 // Call functions here
