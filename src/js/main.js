@@ -22,10 +22,10 @@ const productSlider = () => {
 	return new Swiper('.index-1 .home-product-slider .swiper-container', {
 		slidesPerView: 4,
 		loop: true,
-		autoplay: {
-			delay: 4000,
-			disableOnInteraction: false,
-		},
+		// autoplay: {
+		// 	delay: 4000,
+		// 	disableOnInteraction: false,
+		// },
 		navigation: {
 			prevEl: '.index-1 .swiper-prev',
 			nextEl: '.index-1 .swiper-next',
