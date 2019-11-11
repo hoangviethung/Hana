@@ -264,9 +264,12 @@
 
 		.btn-apply {
 			width: 100%;
-			max-width: 220px;
 			margin: 0;
 			height: 55px;
+
+			@media (min-width: 1025px) {
+				max-width: 220px;
+			}
 		}
 
 		@media (max-width: 1659.98px) {

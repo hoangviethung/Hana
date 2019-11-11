@@ -407,7 +407,7 @@
 
 		.swiper-prev,
 		.swiper-next {
-			top: 30%;
+			top: 50%;
 		}
 
 		.swiper-prev {
@@ -416,7 +416,8 @@
 		}
 
 		.swiper-next {
-			right: 10px;
+			right: 50%;
+			margin-right: 10px;
 		}
 	}
 
@@ -425,6 +426,16 @@
 			.btn-buy {
 				margin-top: 25px;
 			}
+		}
+	}
+	@media (max-width: 575.98px) {
+		.swiper-prev,
+		.swiper-next {
+			top: 30%;
+		}
+		.swiper-next{
+			right: 10px;
+			margin-right: 0;
 		}
 	}
 }
@@ -505,7 +516,7 @@
 
 			.swiper-next,
 			.swiper-prev {
-				top: 25%;
+				top: 30%;
 			}
 
 			.swiper-next {
