@@ -464,6 +464,77 @@ const showInformationContact = () => {
 	}
 }
 
+const ajaxForgotPassword = () => {
+	// Get information to get verify code 
+	$('body').on("click", '#forgot-password .form-button button', function(e) {
+		let informationToGetPassword = $('#forgot-password .form-group input').val()
+		let urlGetVerifyCode = $('#forgot-password .form-button button').attr("data-action")
+		let fancyboxSourceVerify = $('#forgot-password .form-button button').attr('data-src')
+		e.preventDefault();
+		$.ajax({
+			url: urlGetVerifyCode,
+			type: 'post',
+			data: {
+				username: informationToGetPassword
+			},
+			success: function(res) {
+				if (res.Code === 200) {
+					$.fancybox.open({
+						src: fancyboxSourceVerify,
+						type: 'inline',
+						opts: {
+							closeExisting: true,
+							hash: false,
+							beforeShow: function() {
+								$('#verify-code .popup-content>h2').html(res.Message)
+							}
+						}
+					})
+				} else {
+					alert(res.Message);
+				}
+			},
+			error: function(err) {
+				alert(err.status)
+			}
+		})
+	})
+	// get verify code to reset password
+	$('body').on("click", '#verify-code .form-button button', function(e) {
+		let verifyCode = $('#verify-code .form-group input').val()
+		let urlChangePassword = $('#verify-code .form-button button').attr("data-action")
+		let fancyboxSourceResetPassword = $('#verify-code .form-button button').attr('data-src')
+		e.preventDefault();
+		$.ajax({
+			url: urlChangePassword,
+			type: 'post',
+			data: {
+				code: verifyCode
+			},
+			success: function(res) {
+				if (res.Code === 200) {
+					$.fancybox.open({
+						src: fancyboxSourceResetPassword,
+						type: 'inline',
+						opts: {
+							closeExisting: true,
+							hash: false,
+							beforeShow: function() {
+								$('#reset-password .popup-content>h2').html(res.Message)
+							}
+						}
+					})
+				} else {
+					alert(res.Message);
+				}
+			},
+			error: function(err) {
+				alert(err.status)
+			}
+		})
+	})
+}
+
 // Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	GGMapInit();
@@ -488,6 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	moveCartBack();
 	productDetailQuantity();
 	showInformationContact();
+	ajaxForgotPassword();
 	AOS.init({
 		offset: 150, // offset (in px) from the original trigger point
 		delay: 250, // values from 0 to 3000, with step 50ms

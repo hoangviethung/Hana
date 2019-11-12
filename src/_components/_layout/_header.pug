@@ -206,7 +206,7 @@ header
 					.form-group
 						input(type='text' placeholder='Email')
 					.form-button
-						button.btn.btn-apply Tiếp tục
+						button.btn.btn-apply(data-action="/" data-src="#verify-code") Tiếp tục
 					.form-bottom
 						p Hoặc quay lại trang 
 							a(href="#" data-fancybox='login3' data-src="#login") Đăng nhập
@@ -221,7 +221,7 @@ header
 					.form-group
 						input(type='text' placeholder='Nhập mã xác thực')
 					.form-button
-						button.btn.btn-apply Xác thực
+						button.btn.btn-apply(data-src="#reset-password") Xác thực
 					.form-bottom
 						p Chưa nhận được mã xác thực? 
 							a(href="#") Gửi lại mã
