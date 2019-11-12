@@ -355,10 +355,12 @@ const filterPriceSlider = () => {
 				range: true,
 				step: 5000,
 				slide: function(event, ui) {
+					document.getElementById("amount").value = `${ui.values[0]} - ${ui.values[1]}`;
 					document.getElementById('price-max').textContent = ui.values[1].toLocaleString() + '₫';
 					document.getElementById('price-min').textContent = ui.values[0].toLocaleString() + '₫';
 				},
 			});
+			document.getElementById("amount").value = `${defaultValue[0]} - ${defaultValue[1]}`
 		}
 	}
 }
