@@ -486,13 +486,14 @@ const ajaxForgotPassword = () => {
 							closeExisting: true,
 							hash: false,
 							beforeShow: function() {
-								$('#verify-code .popup-content>h2').html(res.Message)
+								$('#verify-code .popup-content .form-text p').html(res.Message)
 							}
 						}
 					})
 				} else {
 					alert(res.Message);
 				}
+
 			},
 			error: function(err) {
 				alert(err.status)
@@ -520,7 +521,7 @@ const ajaxForgotPassword = () => {
 							closeExisting: true,
 							hash: false,
 							beforeShow: function() {
-								$('#reset-password .popup-content>h2').html(res.Message)
+								$('#reset-password .popup-content .form-text p').html(res.Message)
 							}
 						}
 					})
