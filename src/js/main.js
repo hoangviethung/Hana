@@ -538,6 +538,14 @@ const ajaxForgotPassword = () => {
 	})
 }
 
+const fixLayoutFooter = () => {
+	if (window.innerWidth > 1024) {
+		$('footer .button').width($('.col-lg-3 .footer-nav').width())
+	} else {
+		$('footer .button').removeAttr('style')
+	}
+}
+
 // Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	GGMapInit();
@@ -563,6 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	productDetailQuantity();
 	showInformationContact();
 	ajaxForgotPassword();
+	fixLayoutFooter();
 	AOS.init({
 		offset: 150, // offset (in px) from the original trigger point
 		delay: 250, // values from 0 to 3000, with step 50ms
@@ -577,4 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', () => {
 	fixedHeaderActive();
 	toggleGoTopButton();
+})
+window.addEventListener('resize', () => {
+	fixLayoutFooter();
 })
