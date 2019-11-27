@@ -1,88 +1,89 @@
 const GGMapInit = () => {
 	const mapSelector = document.querySelector('#map');
 	const dealerLocatorList = document.querySelector('.dealer-locator-list .list');
+	const infoWindow = new google.maps.InfoWindow();
 	let bounds = new google.maps.LatLngBounds();
+	const mapOption = {
+		zoom: 12,
+		styles: [{
+				"featureType": "administrative",
+				"elementType": "labels.text.fill",
+				"stylers": [{
+					"color": "#444444"
+				}]
+			},
+			{
+				"featureType": "administrative.country",
+				"elementType": "geometry.stroke",
+				"stylers": [{
+					"saturation": "-37"
+				}]
+			},
+			{
+				"featureType": "landscape",
+				"elementType": "all",
+				"stylers": [{
+					"color": "#f2f2f2"
+				}]
+			},
+			{
+				"featureType": "poi",
+				"elementType": "all",
+				"stylers": [{
+					"visibility": "off"
+				}]
+			},
+			{
+				"featureType": "road",
+				"elementType": "all",
+				"stylers": [{
+						"saturation": -100
+					},
+					{
+						"lightness": 45
+					}
+				]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "all",
+				"stylers": [{
+					"visibility": "simplified"
+				}]
+			},
+			{
+				"featureType": "road.arterial",
+				"elementType": "labels.icon",
+				"stylers": [{
+					"visibility": "off"
+				}]
+			},
+			{
+				"featureType": "transit",
+				"elementType": "all",
+				"stylers": [{
+					"visibility": "off"
+				}]
+			},
+			{
+				"featureType": "water",
+				"elementType": "all",
+				"stylers": [{
+						"color": "#e6d3d9"
+					},
+					{
+						"visibility": "on"
+					}
+				]
+			}
+		]
+	};
 
 	if (mapSelector) {
-		let map, markers = [],
-			itemClicked;
-		let locations = locationsInput;
-		const mapOption = {
-			zoom: 12,
-			styles: [{
-					"featureType": "administrative",
-					"elementType": "labels.text.fill",
-					"stylers": [{
-						"color": "#444444"
-					}]
-				},
-				{
-					"featureType": "administrative.country",
-					"elementType": "geometry.stroke",
-					"stylers": [{
-						"saturation": "-37"
-					}]
-				},
-				{
-					"featureType": "landscape",
-					"elementType": "all",
-					"stylers": [{
-						"color": "#f2f2f2"
-					}]
-				},
-				{
-					"featureType": "poi",
-					"elementType": "all",
-					"stylers": [{
-						"visibility": "off"
-					}]
-				},
-				{
-					"featureType": "road",
-					"elementType": "all",
-					"stylers": [{
-							"saturation": -100
-						},
-						{
-							"lightness": 45
-						}
-					]
-				},
-				{
-					"featureType": "road.highway",
-					"elementType": "all",
-					"stylers": [{
-						"visibility": "simplified"
-					}]
-				},
-				{
-					"featureType": "road.arterial",
-					"elementType": "labels.icon",
-					"stylers": [{
-						"visibility": "off"
-					}]
-				},
-				{
-					"featureType": "transit",
-					"elementType": "all",
-					"stylers": [{
-						"visibility": "off"
-					}]
-				},
-				{
-					"featureType": "water",
-					"elementType": "all",
-					"stylers": [{
-							"color": "#e6d3d9"
-						},
-						{
-							"visibility": "on"
-						}
-					]
-				}
-			]
-		};
-		const infoWindow = new google.maps.InfoWindow();
+		let
+			map,
+			markers = [],
+			locations = locationsInput;
 
 		const addMarkers = () => {
 			locations.forEach((location, index) => {
@@ -108,7 +109,6 @@ const GGMapInit = () => {
 					<p>${locations[index].address}</p>
 					<p>${locations[index].phone}</p>
 				`);
-				itemClicked = index;
 				infoWindow.open(map, marker);
 				map.panTo(marker.getPosition());
 				map.setZoom(12);
@@ -129,7 +129,6 @@ const GGMapInit = () => {
 					`;
 						newMarker.setAttribute('marker-id', `${index}`);
 						newMarker.addEventListener('click', () => {
-							itemClicked = index;
 							const markerIndex = newMarker.getAttribute('marker-id');
 							google.maps.event.trigger(markers[markerIndex], 'click');
 						});
@@ -150,7 +149,7 @@ const GGMapInit = () => {
 			});
 			google.maps.event.addListener(map, 'bounds_changed', getLocationList);
 		};
-		
+
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
 };
