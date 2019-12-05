@@ -32,6 +32,9 @@ header {
 
 	.header-navs {
 		display: flex;
+		flex-basis: 0;
+		flex-grow: 1;
+		max-width: 100%;
 
 		.nav-item {
 			align-items: center;
@@ -70,6 +73,7 @@ header {
 		@media (min-width: 1025px) {
 			align-items: center;
 			height: 100%;
+			
 
 			.nav-item {
 				height: 100%;
@@ -79,11 +83,11 @@ header {
 					margin-left: 100px;
 
 					@media (max-width: 1659.98px) {
-						margin-left: 75px;
+						margin-left: 60px;
 					}
 
 					@media (max-width: 1439.98px) {
-						margin-left: 50px;
+						margin-left: 30px;
 					}
 
 					@media (max-width: 1199.98px) {
@@ -545,17 +549,6 @@ header {
 					border-left: 1px solid darken(white, 15%);
 				}
 			}
-		}
-
-		&.active {
-			// box-shadow: 0 0 8px rgba(black, .15);
-			// height: 45px;
-
-			// .logo {
-			// 	max-width: 35px;
-			// 	left: 0%;
-			// 	transform: translateX(0);
-			// }
 		}
 	}
 }
