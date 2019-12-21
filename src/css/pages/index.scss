@@ -174,6 +174,10 @@
 	.home-product-slider {
 		position: relative;
 		padding: 0 80px;
+
+		@media (max-width: 1024.98px) {
+			padding: 0 0;
+		}
 	}
 
 	.swiper-slide {
